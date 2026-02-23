@@ -2,276 +2,538 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Samuel Agyekum | Portfolio</title>
-  <meta name="description" content="Data Analytics & IT Security | Python • Tableau • ML" />
+  <meta name="description" content="Data Analytics & IT Security | Python • Tableau • ML • Automation" />
+
+  <!-- Open Graph (nice link previews) -->
+  <meta property="og:title" content="Samuel Agyekum | Data Analytics & IT Security" />
+  <meta property="og:description" content="Python ML pipelines, automation, dashboards, and governance-aware analytics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agyekumboadi.github.io/" />
+
   <style>
     :root{
-      --bg:#070b12;
-      --card:#0f1626;
-      --muted:#a7b0c0;
-      --text:#eef2ff;
-      --line:#1f2a3a;
-      --accent:#7dd3fc;
-      --accent2:#a78bfa;
+      /* Lighter, modern palette (not too dark) */
+      --bg: #0b1220;
+      --bg2:#0f1a33;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --line: rgba(255,255,255,.10);
+      --text:#f6f7fb;
+      --muted:#c7cfdd;
+      --muted2:#9aa7bd;
+
+      --accent:#60a5fa;   /* blue */
+      --accent2:#a78bfa;  /* purple */
+      --accent3:#34d399;  /* green */
+      --shadow: 0 18px 60px rgba(0,0,0,.25);
+      --radius: 20px;
     }
+
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(125,211,252,.25), transparent 60%),
-                  radial-gradient(900px 500px at 85% 0%, rgba(167,139,250,.20), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.6;
+      color: var(--text);
+      line-height: 1.6;
+
+      /* Brighter, modern background (less heavy than before) */
+      background:
+        radial-gradient(900px 600px at 15% 0%, rgba(96,165,250,.35), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,.26), transparent 55%),
+        radial-gradient(700px 500px at 40% 100%, rgba(52,211,153,.18), transparent 60%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      overflow-x:hidden;
     }
+
     a{color:inherit; text-decoration:none}
-    .wrap{max-width:1100px; margin:0 auto; padding:28px 18px 80px;}
+
+    .wrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 16px 72px;
+    }
+
+    /* Top nav */
     .nav{
-      display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0 22px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
+    .nav-inner{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+    }
+
     .brand{
-      font-weight:800; letter-spacing:.5px;
-      display:flex; gap:10px; align-items:center;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 900;
+      letter-spacing: .2px;
     }
-    .dot{width:10px; height:10px; border-radius:50%;
+    .dot{
+      width:10px;height:10px;border-radius:999px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
-      box-shadow:0 0 18px rgba(125,211,252,.5);
+      box-shadow: 0 0 18px rgba(96,165,250,.55);
+      flex: 0 0 auto;
     }
-    .links{display:flex; gap:14px; flex-wrap:wrap}
+
+    .links{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-end;
+    }
+
     .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       border:1px solid var(--line);
-      background: rgba(15,22,38,.7);
+      background: rgba(255,255,255,.06);
       padding:10px 12px;
       border-radius:999px;
-      font-weight:600;
-      transition:.2s ease;
-    }
-    .pill:hover{transform: translateY(-1px); border-color: rgba(125,211,252,.55)}
-    .hero{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:22px;
-      align-items:center;
-      margin-top:10px;
-    }
-    .card{
-      background: rgba(15,22,38,.75);
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:22px;
-      box-shadow: 0 10px 40px rgba(0,0,0,.25);
-      backdrop-filter: blur(8px);
-    }
-    h1{margin:0 0 10px; font-size:44px; line-height:1.15; letter-spacing:.2px}
-    .subtitle{color:var(--muted); font-size:16px; margin:0 0 16px}
-    .badges{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .badge{
-      font-size:13px; color:#dbeafe;
-      border:1px solid rgba(125,211,252,.25);
-      background: rgba(125,211,252,.08);
-      padding:8px 10px;
-      border-radius:999px;
-    }
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:16px}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      padding:11px 14px;
-      border-radius:12px;
       font-weight:800;
-      border:1px solid var(--line);
-      background:#0b1322;
-      transition:.2s ease;
+      color: var(--text);
+      transition: .2s ease;
+      white-space:nowrap;
+    }
+    .pill:hover{
+      transform: translateY(-1px);
+      border-color: rgba(96,165,250,.45);
+      background: rgba(255,255,255,.10);
+    }
+
+    .pill.primary{
+      border-color: rgba(96,165,250,.45);
+      background: linear-gradient(90deg, rgba(96,165,250,.20), rgba(167,139,250,.16));
+    }
+
+    /* Hero */
+    .hero{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      align-items:stretch;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .card.glass{
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight:900;
+      color: rgba(246,247,251,.92);
+      background: rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      padding: 8px 10px;
+      border-radius: 999px;
+    }
+    .kicker span{
+      width:8px;height:8px;border-radius:999px;
+      background: var(--accent3);
+      box-shadow: 0 0 14px rgba(52,211,153,.45);
+      display:inline-block;
+    }
+
+    h1{
+      margin: 12px 0 10px;
+      font-size: 44px;
+      line-height: 1.08;
+      letter-spacing: -.3px;
+    }
+    .subtitle{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 70ch;
+    }
+
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top: 12px;
+    }
+
+    .badge{
+      font-size: 13px;
+      font-weight: 800;
+      color: rgba(246,247,251,.95);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 8px 10px;
+      border-radius: 999px;
+      white-space:nowrap;
+    }
+
+    .cta{
+      display:flex;
+      gap: 10px;
+      flex-wrap:wrap;
+      margin-top: 16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition: .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color: rgba(167,139,250,.40);
+      background: rgba(255,255,255,.10);
     }
     .btn.primary{
-      border-color: rgba(125,211,252,.45);
-      background: linear-gradient(90deg, rgba(125,211,252,.18), rgba(167,139,250,.16));
+      border-color: rgba(96,165,250,.45);
+      background: linear-gradient(90deg, rgba(96,165,250,.22), rgba(167,139,250,.16));
     }
-    .btn:hover{transform: translateY(-1px); border-color: rgba(167,139,250,.55)}
+
+    /* Profile card */
     .profile{
-      display:flex; flex-direction:column; gap:12px; align-items:center; text-align:center;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      justify-content: space-between;
+    }
+    .profile-top{
+      display:flex;
+      align-items:center;
+      gap: 14px;
     }
     .photo{
-      width:240px; height:240px; border-radius:18px; object-fit:cover;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      width: 92px;
+      height: 92px;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      flex: 0 0 auto;
+      background: rgba(255,255,255,.06);
     }
-    .small{color:var(--muted); font-size:14px}
-    .section{margin-top:22px}
-    .section h2{margin:0 0 12px; font-size:20px}
+    .profile-name{
+      font-weight: 900;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .small{
+      color: var(--muted2);
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    .contact{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      margin-top: 8px;
+    }
+    .chip{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 800;
+      color: rgba(246,247,251,.95);
+    }
+    .chip:hover{border-color: rgba(96,165,250,.45)}
+
+    /* Sections */
+    .section{
+      margin-top: 18px;
+    }
+    .section h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: .2px;
+    }
+    .section .hint{
+      margin: 0 0 14px;
+      color: var(--muted2);
+      font-size: 14px;
+    }
+
     .grid{
       display:grid;
       grid-template-columns: repeat(3, 1fr);
-      gap:14px;
+      gap: 12px;
     }
+
     .proj{
-      padding:16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(7,11,18,.35);
-      transition:.2s ease;
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      transition: .2s ease;
+      min-height: 168px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap: 10px;
     }
-    .proj:hover{transform: translateY(-2px); border-color: rgba(125,211,252,.45)}
-    .proj h3{margin:0 0 8px; font-size:16px}
-    .proj p{margin:0; color:var(--muted); font-size:14px}
-    .tags{margin-top:10px; display:flex; flex-wrap:wrap; gap:8px}
+    .proj:hover{
+      transform: translateY(-2px);
+      border-color: rgba(96,165,250,.45);
+      background: rgba(255,255,255,.10);
+    }
+    .proj h3{
+      margin:0 0 6px;
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .proj p{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
     .tag{
-      font-size:12px; color:#c7d2fe;
-      border:1px solid rgba(199,210,254,.18);
-      background: rgba(199,210,254,.06);
-      padding:6px 8px; border-radius:999px;
+      font-size: 12px;
+      font-weight: 800;
+      color: rgba(246,247,251,.92);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 6px 8px;
+      border-radius: 999px;
     }
+
+    /* Footer */
     .footer{
-      margin-top:26px;
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      color:var(--muted); font-size:13px;
+      margin-top: 22px;
+      display:flex;
+      justify-content:space-between;
+      gap: 10px;
+      flex-wrap:wrap;
+      color: var(--muted2);
+      font-size: 13px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.10);
     }
-    .mutedlink{color:var(--muted); text-decoration:underline; text-decoration-color: rgba(167,139,250,.35)}
-    @media (max-width: 920px){
-      .hero{grid-template-columns:1fr}
-      .profile{flex-direction:row; text-align:left; justify-content:space-between}
-      .photo{width:160px; height:160px}
-      .grid{grid-template-columns:1fr}
-      h1{font-size:34px}
+    .mutedlink{
+      color: rgba(246,247,251,.90);
+      text-decoration: underline;
+      text-decoration-color: rgba(96,165,250,.35);
+      text-underline-offset: 3px;
+    }
+
+    /* Better mobile */
+    @media (max-width: 980px){
+      h1{font-size: 38px}
+      .hero{grid-template-columns: 1fr}
+      .grid{grid-template-columns: 1fr}
+      .wrap{padding-bottom: 56px}
+    }
+
+    @media (max-width: 520px){
+      h1{font-size: 32px}
+      .nav-inner{gap: 10px}
+      .pill{padding: 9px 10px}
+      .btn{width: 100%}
+      .cta{gap: 10px}
+      .profile-top{align-items:flex-start}
+      .photo{width: 84px; height: 84px}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="nav">
+  <header class="nav">
+    <div class="nav-inner">
       <div class="brand"><span class="dot"></span> Samuel Agyekum</div>
-      <div class="links">
-  <a class="pill" href="https://github.com/agyekumboadi" target="_blank" rel="noreferrer">GitHub</a>
-  <a class="pill" href="https://www.linkedin.com/in/samuel-agyekum-388a82150/" target="_blank" rel="noreferrer">LinkedIn</a>
-  <a class="pill" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">CV</a>
-</div>
+      <nav class="links" aria-label="Primary">
+        <a class="pill" href="https://github.com/agyekumboadi" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="pill" href="https://www.linkedin.com/in/samuel-agyekum-388a82150/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <!-- CV button (your uploaded PDF) -->
+        <a class="pill primary" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">CV</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="hero">
-      <div class="card">
-       <h1>Agyekum: The Analytics Engineer</h1>
+  <main class="wrap">
+    <section class="hero">
+      <div class="card glass">
+        <div class="kicker"><span></span> Data • Security • Automation</div>
+        <h1>Agyekum: The Analytics Engineer</h1>
+
         <p class="subtitle">
-<p class="subtitle">
-  I build practical analytics, workflow automation, and Machine Learning (ML) solutions in <strong>Python</strong> that improve operational efficiency and decision-making.
-  This portfolio features an end-to-end <strong>Player Performance ML Pipeline</strong>, a <strong>Pharmacy Inventory & Revenue Analytics System</strong> 
-  for stock optimisation and profitability tracking, and an <strong>automated staff onboarding/ID generation workflow</strong> built for a regulated healthcare environment.
-  I focus on clean data workflows, explainable insights, and reliable reporting that supports real-world decisions.
-</p>
+          I build practical analytics, workflow automation, and Machine Learning (ML) solutions in <strong>Python</strong> that improve operational efficiency and decision-making.
+          This portfolio features an end-to-end <strong>Player Performance ML Pipeline</strong>, a <strong>Pharmacy Inventory & Revenue Analytics System</strong>,
+          and an <strong>automated staff onboarding/ID generation workflow</strong> for a regulated healthcare environment.
+          I focus on clean data workflows, explainable insights, and reliable reporting that supports real-world decisions.
         </p>
 
         <div class="badges">
           <span class="badge">Python (pandas, scikit-learn)</span>
           <span class="badge">ML • PCA • SHAP</span>
+          <span class="badge">Automation • Workflows</span>
           <span class="badge">Tableau • Storytelling</span>
           <span class="badge">Data Governance • GDPR</span>
         </div>
 
         <div class="cta">
           <a class="btn primary" href="#projects">View Projects ↓</a>
-          <a class="btn" href="https://github.com/agyekumboadi?tab=repositories" target="_blank" rel="noreferrer">Browse Repos</a>
+          <a class="btn" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">Open CV</a>
           <a class="btn" href="#more-projects">More Projects</a>
         </div>
       </div>
 
-      <div class="card profile">
-        <img class="photo" src="assets/profile.png" alt="Samuel Agyekum" />
-        <div>
-          <div style="font-weight:900; font-size:18px; margin-bottom:4px;">Samuel Agyekum</div>
-          <div class="small">MSc Data Analytics & IT Security Management</div>
-          <div class="small">London, UK</div>
-          <div style="margin-top:10px;">
-            <a class="mutedlink" href="mailto:agyekumowuraku@gmail.com">agyekumowuraku@gmail.com</a>
+      <aside class="card profile" aria-label="Profile">
+        <div class="profile-top">
+          <!-- keep your current file name (profile.png) -->
+          <img class="photo" src="assets/profile.png" alt="Samuel Agyekum" />
+          <div>
+            <div class="profile-name">Samuel Agyekum</div>
+            <div class="small">MSc Data Analytics & IT Security Management</div>
+            <div class="small">London, UK</div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="section card" id="projects">
+        <div class="contact">
+          <a class="chip" href="mailto:agyekumowuraku@gmail.com">agyekumowuraku@gmail.com</a>
+          <a class="chip" href="https://github.com/agyekumboadi?tab=repositories" target="_blank" rel="noreferrer">Browse Repos</a>
+          <a class="chip" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">Download CV</a>
+        </div>
+
+        <div class="small">
+          Focus: applied ML pipelines, data-driven systems, governance-aware analytics, and automation in regulated environments.
+        </div>
+      </aside>
+    </section>
+
+    <section class="section card" id="projects">
       <h2>Featured Projects</h2>
-   <div class="grid">
+      <p class="hint">High-impact builds across multi-sport analytics, operational systems, and workflow automation.</p>
 
-  <a class="proj" href="https://github.com/agyekumboadi/player-performance-ml-pipeline" target="_blank" rel="noreferrer">
-    <h3>Player Performance ML Pipeline (Multi-Sport)</h3>
-    <p>End-to-end predictive modelling pipeline using KPI engineering, PCA, evaluation metrics, and SHAP explainability.</p>
-    <div class="tags">
-      <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">PCA</span><span class="tag">SHAP</span><span class="tag">ROC AUC</span>
-    </div>
-  </a>
-
-  <a class="proj" href="https://github.com/agyekumboadi/pharmacy-stock-management-system" target="_blank" rel="noreferrer">
-    <h3>Pharmacy Stock Management System</h3>
-    <p>Inventory and stock tracking system designed to improve accuracy, reduce stock-outs, and support daily operations.</p>
-    <div class="tags">
-      <span class="tag">Information Systems</span><span class="tag">Inventory</span><span class="tag">Workflow</span><span class="tag">Operations</span>
-    </div>
-  </a>
-
-  <a class="proj" href="https://github.com/agyekumboadi/data-handling-and-decision-making" target="_blank" rel="noreferrer">
-    <h3>Data Handling & Decision Making</h3>
-    <p>Practical data preparation, cleaning, and insight workflows showing how structured analysis supports better decisions.</p>
-    <div class="tags">
-      <span class="tag">Data Cleaning</span><span class="tag">EDA</span><span class="tag">Insights</span><span class="tag">Reporting</span>
-    </div>
-  </a>
-
-</div> 
+      <div class="grid">
+        <a class="proj" href="https://github.com/agyekumboadi/player-performance-ml-pipeline" target="_blank" rel="noreferrer">
+          <div>
+            <h3>Player Performance ML Pipeline (Multi-Sport)</h3>
+            <p>End-to-end predictive modelling pipeline using KPI engineering, PCA, evaluation metrics, and SHAP explainability.</p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">PCA</span><span class="tag">SHAP</span><span class="tag">ROC AUC</span>
+            </div>
+          </div>
         </a>
-      
-<div class="section card" id="more-projects">
-  <h2>More Projects</h2>
-  <p class="subtitle" style="margin-top:-6px;">
-    Additional systems and analytics work across hospitality and recruitment.
-  </p>
 
-  <div class="grid">
+        <a class="proj" href="https://github.com/agyekumboadi/pharmacy-stock-management-system" target="_blank" rel="noreferrer">
+          <div>
+            <h3>Pharmacy Stock Management System</h3>
+            <p>Inventory and stock tracking system designed to improve accuracy, reduce stock-outs, and support daily operations.</p>
+            <div class="tags">
+              <span class="tag">Inventory</span><span class="tag">Workflow</span><span class="tag">Operations</span><span class="tag">Reporting</span>
+            </div>
+          </div>
+        </a>
 
-    <a class="proj" href="https://richchotel.com" target="_blank" rel="noreferrer">
-      <h3>Rich Comfort Hotel - Revenue & Booking Analytics</h3>
-      <p>Hospitality analytics and booking workflow improvements focused on occupancy, pricing, and revenue reconciliation.</p>
-      <div class="tags">
-        <span class="tag">Hospitality</span><span class="tag">Revenue</span><span class="tag">Occupancy</span><span class="tag">Automation</span>
+        <a class="proj" href="https://github.com/agyekumboadi/care-staff-id-automation-anonymised" target="_blank" rel="noreferrer">
+          <div>
+            <h3>Care Staff ID Automation (Anonymised)</h3>
+            <p>Automated staff onboarding and ID generation workflow built for a regulated care environment—reducing admin time and improving consistency.</p>
+            <div class="tags">
+              <span class="tag">Automation</span><span class="tag">Onboarding</span><span class="tag">ID Generation</span><span class="tag">Governance</span>
+            </div>
+          </div>
+        </a>
       </div>
-    </a>
 
-    <a class="proj" href="https://nagmaenfield.co.uk" target="_blank" rel="noreferrer">
-      <h3>Nagma Enfield - Recruitment Intelligence Platform</h3>
-      <p>Recruitment analytics platform supporting sourcing, placement tracking, and GDPR-aligned applicant data handling.</p>
-      <div class="tags">
-        <span class="tag">Recruitment</span><span class="tag">Dashboards</span><span class="tag">Revenue Tracking</span><span class="tag">GDPR</span>
+      <div style="margin-top:12px;">
+        <a class="btn" href="https://github.com/agyekumboadi/data-handling-and-decision-making" target="_blank" rel="noreferrer">
+          View: Data Handling & Decision Making →
+        </a>
       </div>
-    </a>
+    </section>
 
-    <div class="proj">
-      <h3>Coming Next: Staff ID & Onboarding Automation</h3>
-      <p>Workflow automation for staff onboarding and ID generation for a regulated healthcare environment (repo will be added).</p>
-      <div class="tags">
-        <span class="tag">Automation</span><span class="tag">Onboarding</span><span class="tag">ID Generation</span><span class="tag">Governance</span>
+    <section class="section card" id="more-projects">
+      <h2>More Projects</h2>
+      <p class="hint">Web, business intelligence, and sector-focused systems supporting revenue and service delivery.</p>
+
+      <div class="grid">
+        <a class="proj" href="https://richchotel.com" target="_blank" rel="noreferrer">
+          <div>
+            <h3>Rich Comfort Hotel — Revenue & Booking Analytics</h3>
+            <p>Hospitality analytics and booking workflow improvements focused on occupancy, pricing, and revenue reconciliation.</p>
+            <div class="tags">
+              <span class="tag">Hospitality</span><span class="tag">Revenue</span><span class="tag">Occupancy</span><span class="tag">Automation</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="proj" href="https://nagmaenfield.co.uk" target="_blank" rel="noreferrer">
+          <div>
+            <h3>Nagma Enfield — Recruitment Intelligence Platform</h3>
+            <p>Recruitment analytics platform supporting sourcing, placement tracking, and GDPR-aligned applicant data handling.</p>
+            <div class="tags">
+              <span class="tag">Recruitment</span><span class="tag">Dashboards</span><span class="tag">Revenue Tracking</span><span class="tag">GDPR</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="proj" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">
+          <div>
+            <h3>CV — Samuel Agyekum</h3>
+            <p>Download my CV for a full overview of education, awards, and professional projects.</p>
+            <div class="tags">
+              <span class="tag">PDF</span><span class="tag">Experience</span><span class="tag">Projects</span>
+            </div>
+          </div>
+        </a>
       </div>
-    </div>
+    </section>
 
-  </div>
-</div>
-      </div>
-    </div>
-
-    <div class="section card" id="skills">
+    <section class="section card" id="skills">
       <h2>Skills Snapshot</h2>
-     <p class="subtitle">
-  <strong>Data Analytics & IT Security</strong> - Building practical Python ML pipelines and decision-ready insights.
-  I focus on clean data workflows, explainable modelling, and clear reporting that supports real-world decisions.
-</p>
-    </div>
+      <p class="subtitle" style="margin:0">
+        <strong>Data Analytics & IT Security</strong> — Building practical Python ML pipelines and decision-ready insights.<br/>
+        <strong>ML:</strong> Logistic Regression, Random Forest, PCA, SHAP • <strong>Analytics:</strong> Data cleaning, EDA, KPI engineering •
+        <strong>Tools:</strong> Python, Tableau, Jupyter, Git/GitHub • <strong>Governance:</strong> GDPR-aligned data handling, access controls, documentation.
+      </p>
+    </section>
 
-    <div class="footer">
-      <div>© <span id="y"></span>Samuel Agyekum</div>
-      <div>
-        Built on <a class="mutedlink" href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a>
-      </div>
-    </div>
-  </div>
+    <footer class="footer">
+      <div>© <span id="y"></span> Samuel Agyekum</div>
+      <div>Built with <a class="mutedlink" href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a></div>
+    </footer>
+  </main>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
