@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#08111f">
   <title>Samuel Agyekum | Data, Automation & Digital Systems</title>
-  <meta name="description" content="Samuel Agyekum - data analytics, applied machine learning, workflow automation and governance-aware digital systems.">
+  <meta name="description" content="Samuel Agyekum — data analytics, applied machine learning, workflow automation and governance aware digital systems.">
   <meta name="author" content="Samuel Agyekum">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Samuel Agyekum | Data, Automation & Digital Systems">
@@ -74,7 +74,7 @@
     .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(18px); }
     .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 210px; }
-    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; color: #10200b; background: var(--accent); font-weight: 900; letter-spacing: -.06em; box-shadow: 0 8px 24px rgba(163,230,53,.14); }
+    .brand-photo { width: 44px; height: 44px; flex: 0 0 44px; display: block; object-fit: cover; object-position: center 25%; border: 1px solid var(--line); border-radius: 13px; background: var(--surface-2); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
     .brand-copy { display: grid; line-height: 1.15; }
     .brand-copy strong { font-size: .92rem; letter-spacing: .01em; }
     .brand-copy span { margin-top: 5px; color: var(--muted-2); font-size: .71rem; letter-spacing: .09em; text-transform: uppercase; }
@@ -169,36 +169,55 @@
     .education-item strong { display: block; font-size: .93rem; }
     .education-item span { display: block; margin-top: 3px; color: var(--muted); font-size: .82rem; }
 
-    .ai-section { position: relative; overflow: hidden; padding: 33px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 9%, var(--surface-solid)), color-mix(in srgb, var(--accent-3) 9%, var(--surface-solid))); }
-    .ai-section::after { content: ""; position: absolute; width: 360px; height: 360px; right: -140px; top: -200px; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--line) 35%, transparent), 0 0 0 70px color-mix(in srgb, var(--line) 20%, transparent); pointer-events: none; }
-    .ai-top { position: relative; z-index: 1; display: flex; align-items: start; justify-content: space-between; gap: 20px; }
-    .ai-top .section-head { margin-bottom: 23px; }
-    .ai-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-    .ai-card { padding: 19px; border: 1px solid var(--line); border-radius: 17px; background: color-mix(in srgb, var(--surface-solid) 78%, transparent); }
-    .ai-card svg { width: 22px; height: 22px; margin-bottom: 13px; color: var(--accent-2); }
-    .ai-card h3 { margin: 0 0 7px; font-size: .97rem; }
-    .ai-card p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.7; }
-    .ai-note { position: relative; z-index: 1; margin: 18px 0 0; color: var(--muted-2); font-size: .77rem; }
-
-    .guide-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 18px; align-items: stretch; }
-    .guide-intro { padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
-    .guide-intro h3 { margin: 0 0 10px; font-size: 1.3rem; }
-    .guide-intro p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.8; }
-    .prompt-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
-    .prompt-chip { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: transparent; font-size: .76rem; cursor: pointer; }
-    .prompt-chip:hover { border-color: var(--accent-2); color: var(--text); }
-    .guide-box { min-height: 310px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
-    .guide-header { display: flex; align-items: center; gap: 10px; padding: 16px 19px; border-bottom: 1px solid var(--line); }
-    .guide-status { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 14%, transparent); }
-    .guide-header strong { font-size: .87rem; }
-    .guide-header span { margin-left: auto; color: var(--muted-2); font-size: .7rem; }
-    .guide-response { flex: 1; min-height: 170px; padding: 21px; color: var(--muted); font-size: .9rem; line-height: 1.8; }
-    .guide-response strong { color: var(--text); }
-    .guide-response a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-    .guide-form { display: flex; gap: 9px; padding: 13px; border-top: 1px solid var(--line); }
-    .guide-input { flex: 1; min-width: 0; padding: 11px 13px; border: 1px solid var(--line); border-radius: 11px; background: var(--bg-soft); color: var(--text); }
-    .guide-form button { width: 43px; flex: none; border: 0; border-radius: 11px; color: #14200d; background: var(--accent); cursor: pointer; }
-    .guide-form button svg { width: 18px; height: 18px; }
+    /* Interactive portfolio assistant */
+    .pa-shell {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 35px;
+      align-items: center;
+      padding: 36px;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 5% 5%, color-mix(in srgb, var(--accent-2) 13%, transparent), transparent 45%),
+        var(--surface-solid);
+      box-shadow: var(--shadow);
+    }
+    .pa-intro h2 { margin: 14px 0; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.08; letter-spacing: -.055em; }
+    .pa-intro h2 span { color: var(--accent); }
+    .pa-intro > p { color: var(--muted); line-height: 1.9; font-size: .96rem; }
+    .pa-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .pa-topics span { padding: 7px 10px; border: 1px solid var(--line); border-radius: 9px; color: var(--muted); font-size: .75rem; font-weight: 700; }
+    .pa-note { display: flex; align-items: center; gap: 9px; margin-top: 30px; color: var(--muted-2); font-size: .8rem; }
+    .pa-note-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .pa-chat { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 21px; background: var(--bg-soft); box-shadow: 0 15px 45px rgba(0,0,0,.14); }
+    .pa-chat-header { display: flex; align-items: center; gap: 12px; padding: 17px; border-bottom: 1px solid var(--line); }
+    .pa-avatar { width: 43px; height: 43px; flex: none; display: grid; place-items: center; border-radius: 13px; background: var(--accent); color: #14200d; font-weight: 950; }
+    .pa-header-copy { display: grid; gap: 3px; }
+    .pa-header-copy strong { font-size: .87rem; }
+    .pa-header-copy span { color: var(--muted-2); font-size: .73rem; }
+    .pa-online { margin-left: auto; display: flex; align-items: center; gap: 6px; color: var(--accent-2); font-size: .65rem; font-weight: 850; letter-spacing: .07em; }
+    .pa-online i { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); }
+    .pa-messages { min-height: 260px; max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 13px; padding: 19px; scroll-behavior: smooth; }
+    .pa-message { max-width: 90%; padding: 13px 15px; border: 1px solid var(--line); border-radius: 15px; font-size: .86rem; line-height: 1.75; white-space: pre-wrap; overflow-wrap: anywhere; }
+    .pa-message.assistant { align-self: flex-start; background: var(--surface-solid); color: var(--text); border-top-left-radius: 4px; }
+    .pa-message.user { align-self: flex-end; background: color-mix(in srgb, var(--accent) 13%, var(--surface-solid)); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); border-top-right-radius: 4px; }
+    .pa-message-label { display: block; margin-bottom: 5px; color: var(--accent-2); font-size: .65rem; font-weight: 850; letter-spacing: .08em; }
+    .pa-suggestions { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 16px 14px; }
+    .pa-suggestions button { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); font-size: .7rem; cursor: pointer; transition: .2s ease; }
+    .pa-suggestions button:hover { border-color: var(--accent-2); color: var(--text); background: var(--surface); }
+    .pa-form { display: flex; gap: 9px; padding: 13px; border-top: 1px solid var(--line); }
+    .pa-form input { flex: 1; min-width: 0; min-height: 45px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-solid); color: var(--text); outline: none; }
+    .pa-form input:focus { border-color: var(--accent-2); }
+    .pa-form button { width: 46px; height: 46px; flex: none; display: grid; place-items: center; border: 0; border-radius: 12px; background: var(--accent); color: #14200d; cursor: pointer; }
+    .pa-form button:disabled { opacity: .5; cursor: not-allowed; }
+    .pa-form button svg { width: 20px; height: 20px; }
+    .pa-footer { padding: 0 15px 14px; color: var(--muted-2); font-size: .68rem; line-height: 1.6; }
+    .pa-typing { display: inline-flex; gap: 5px; padding: 4px 0; }
+    .pa-typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-2); animation: paPulse 1s infinite alternate; }
+    .pa-typing span:nth-child(2) { animation-delay: .2s; }
+    .pa-typing span:nth-child(3) { animation-delay: .4s; }
+    @keyframes paPulse { from { opacity: .25; transform: translateY(0); } to { opacity: 1; transform: translateY(-4px); } }
 
     .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
     .skill-card { padding: 21px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
@@ -238,8 +257,8 @@
       .float-card.two { right: 2%; bottom: 9%; }
       .trust-strip { grid-template-columns: repeat(2, 1fr); padding-inline: 10px; }
       .section { padding: 66px 0; }
-      .about-layout, .guide-layout { grid-template-columns: 1fr; }
-      .ai-grid { grid-template-columns: 1fr; }
+      .about-layout { grid-template-columns: 1fr; }
+      .pa-shell { grid-template-columns: 1fr; }
       .contact-panel { grid-template-columns: 1fr; padding: 27px; }
     }
     @media (max-width: 520px) {
@@ -258,9 +277,14 @@
       .project-grid, .skills-grid { grid-template-columns: 1fr; }
       .work-toolbar { align-items: stretch; }
       .project-search { width: 100%; }
-      .panel, .guide-intro { padding: 22px; }
-      .ai-section { padding: 24px 18px; }
-      .guide-form { padding: 10px; }
+      .panel { padding: 22px; }
+      .pa-shell { padding: 16px; border-radius: 19px; }
+      .pa-chat-header { padding: 13px; }
+      .pa-messages { padding: 13px; }
+      .pa-message { max-width: 96%; }
+      .pa-online { font-size: .58rem; }
+      .pa-suggestions button { font-size: .66rem; }
+      .pa-form { padding: 10px; }
       .contact-actions .button { width: 100%; }
       .footer-inner { align-items: flex-start; flex-direction: column; }
     }
@@ -274,13 +298,13 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Samuel Agyekum home">
-        <span class="brand-mark" aria-hidden="true">SA</span>
+        <img class="brand-photo" src="assets/profile.png" alt="Samuel Agyekum" width="42" height="42">
         <span class="brand-copy"><strong>Samuel Agyekum</strong><span>Data · Security · Automation</span></span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#work">Selected work</a>
         <a href="#about">About</a>
-        <a href="#ai-workflow">AI & tools</a>
+        <a href="#ai-workflow">Ask my portfolio</a>
         <a href="#skills">Capabilities</a>
         <a href="#contact">Contact</a>
         <a class="button button-primary" data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request my CV <span aria-hidden="true">↗</span></a>
@@ -299,9 +323,9 @@
   <main id="main">
     <section class="hero container" id="top">
       <div>
-        <span class="eyebrow"><span class="eyebrow-dot"></span> Data · Digital systems · Practical problem-solving</span>
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Data · Digital systems · Practical problem solving</span>
         <h1>I turn data into <span class="gradient-text">decisions</span> and ideas into systems.</h1>
-        <p class="hero-copy">I'm <strong>Samuel Agyekum</strong> - a data analytics and IT security professional interested in building practical analytics, explainable machine learning and workflow automation. I connect technical work with the real operational problems it is meant to solve.</p>
+        <p class="hero-copy">I'm <strong>Samuel Agyekum</strong> — a data analytics and IT security professional interested in building practical analytics, explainable machine learning and workflow automation. I connect technical work with the real operational problems it is meant to solve.</p>
         <div class="hero-ctas">
           <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
           <a class="button" data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request my CV <span aria-hidden="true">↗</span></a>
@@ -350,7 +374,7 @@
         <article class="project-card" data-category="analytics" data-search="player performance machine learning multi sport football basketball python random forest pca shap explainability">
           <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h17M7 15l4-5 3 3 5-7"/><circle cx="18.5" cy="6" r="1.5"/></svg></span><span class="project-type">Machine learning</span></div>
           <h3>Player Performance ML Pipeline</h3>
-          <p>An end-to-end sports analytics project exploring player performance through KPI engineering, predictive modelling, dimensionality reduction and model explainability.</p>
+          <p>An end to end sports analytics project exploring player performance through KPI engineering, predictive modelling, dimensionality reduction and model explainability.</p>
           <div class="tag-list"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">PCA</span><span class="tag">SHAP</span></div>
           <a class="project-link" href="https://github.com/agyekumboadi/player-performance-ml-pipeline" target="_blank" rel="noopener noreferrer">Explore repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </article>
@@ -364,8 +388,8 @@
         <article class="project-card" data-category="automation" data-search="staff onboarding id generation automation google forms apps script workflow governance gdpr">
           <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.09-.03a1.7 1.7 0 0 0-1.82.43l-.06.06h-3.4l-.04-.09a1.7 1.7 0 0 0-1.52-1.03 1.7 1.7 0 0 0-.65.13l-.08.03-2.94-1.7.03-.09a1.7 1.7 0 0 0-.43-1.82l-.06-.06v-3.4l.09-.04a1.7 1.7 0 0 0 .9-2.17l-.03-.08 1.7-2.94.09.03a1.7 1.7 0 0 0 1.82-.43l.06-.06h3.4l.04.09a1.7 1.7 0 0 0 2.17.9l.08-.03 2.94 1.7-.03.09A1.7 1.7 0 0 0 20.7 12l-.06.06v2.94Z"/></svg></span><span class="project-type">Workflow automation</span></div>
           <h3>Staff ID Automation</h3>
-          <p>An anonymised staff onboarding and ID-generation workflow designed to improve consistency, reduce repetitive administration and support more controlled information handling.</p>
-          <div class="tag-list"><span class="tag">Google Forms</span><span class="tag">Apps Script</span><span class="tag">Automation</span><span class="tag">GDPR-aware</span></div>
+          <p>An anonymised staff onboarding and ID generation workflow designed to improve consistency, reduce repetitive administration and support more controlled information handling.</p>
+          <div class="tag-list"><span class="tag">Google Forms</span><span class="tag">Apps Script</span><span class="tag">Automation</span><span class="tag">GDPR aware</span></div>
           <a class="project-link" href="https://github.com/agyekumboadi/care-staff-id-automation-anonymised" target="_blank" rel="noopener noreferrer">Explore repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </article>
         <article class="project-card" data-category="analytics" data-search="data handling decision making analytics data design visualisation">
@@ -385,7 +409,7 @@
         <article class="project-card" data-category="digital" data-search="nagma enfield recruitment website applicant data gdpr recruitment intelligence">
           <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 5v1"/></svg></span><span class="project-type">Digital platform</span></div>
           <h3>Nagma Enfield</h3>
-          <p>A recruitment-focused web presence, with an emphasis on clear service information and responsible handling of applicant-related information.</p>
+          <p>A recruitment focused web presence, with an emphasis on clear service information and responsible handling of applicant-related information.</p>
           <div class="tag-list"><span class="tag">WordPress</span><span class="tag">Recruitment</span><span class="tag">Information governance</span></div>
           <a class="project-link" href="https://nagmaenfield.co.uk" target="_blank" rel="noopener noreferrer">Visit website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
         </article>
@@ -394,14 +418,14 @@
     </section>
 
     <section class="section container" id="about">
-      <div class="section-head"><span class="section-label">A little about me</span><h2>Technical thinking, grounded in operations.</h2><p class="section-intro">I enjoy the space where data, technology and people meet - understanding a problem, designing a practical approach and making the result usable.</p></div>
+      <div class="section-head"><span class="section-label">A little about me</span><h2>Technical thinking, grounded in operations.</h2><p class="section-intro">I enjoy the space where data, technology and people meet — understanding a problem, designing a practical approach and making the result usable.</p></div>
       <div class="about-layout">
         <article class="panel">
           <h3>How I approach problems</h3>
           <p>My background combines information technology, data analytics and IT security. I am particularly interested in analytics that can be explained, automation that makes work more consistent, and systems that treat information responsibly.</p>
           <p>Alongside technical projects, my operational experience has shown me why solutions need to work for the people using them. A good dashboard, model or workflow should make a real task clearer, safer or more efficient.</p>
           <div class="principles">
-            <div class="principle"><span class="principle-number">01</span><div><strong>Understand the problem</strong><span>Start with the decision, process or user need - not just the technology.</span></div></div>
+            <div class="principle"><span class="principle-number">01</span><div><strong>Understand the problem</strong><span>Start with the decision, process or user need — not just the technology.</span></div></div>
             <div class="principle"><span class="principle-number">02</span><div><strong>Build with evidence</strong><span>Use sound data practices, clear evaluation and explainable outputs.</span></div></div>
             <div class="principle"><span class="principle-number">03</span><div><strong>Design responsibly</strong><span>Consider privacy, governance, security and maintainability throughout.</span></div></div>
           </div>
@@ -411,50 +435,65 @@
           <div class="education-list">
             <div class="education-item"><strong>MSc Data Analytics & IT Security Management</strong><span>Arden University, UK · Distinction · 2025</span></div>
             <div class="education-item"><strong>BSc Information Technology</strong><span>Ghana Communication Technology University · Second Class Upper</span></div>
-            <div class="education-item"><strong>Academic recognition</strong><span>Arden Achiever - Postgraduate School of STEM Award; Vice Chancellor Award</span></div>
+            <div class="education-item"><strong>Academic recognition</strong><span>Arden Achiever — Postgraduate School of STEM Award; Vice Chancellor Award</span></div>
           </div>
           <div style="height:1px;background:var(--line);margin:24px 0"></div>
           <h3>Operational experience</h3>
-          <p>In healthcare operations, I have contributed to digital records, staff onboarding and ID-generation workflows, and secure documentation practices. This has strengthened my interest in practical automation and governance-aware technology.</p>
+          <p>In healthcare operations, I have contributed to digital records, staff onboarding and ID generation workflows, and secure documentation practices. This has strengthened my interest in practical automation and governance aware technology.</p>
         </article>
       </div>
     </section>
 
     <section class="section container" id="ai-workflow">
-      <div class="ai-section">
-        <div class="ai-top">
-          <div class="section-head"><span class="section-label">AI, used thoughtfully</span><h2>Augment the work. Verify the result.</h2><p class="section-intro">I see AI as a useful assistant for exploring ideas, accelerating routine tasks and making technical information easier to work with - while keeping human judgement, data quality and privacy central.</p></div>
-        </div>
-        <div class="ai-grid">
-          <article class="ai-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg><h3>Explore & structure</h3><p>Use generative AI to brainstorm approaches, clarify requirements, create first-draft documentation and break complex tasks into manageable steps.</p></article>
-          <article class="ai-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><h3>Build & analyse</h3><p>Combine assisted problem-solving with Python, pandas, scikit-learn and visualisation tools to develop and assess data-driven solutions.</p></article>
-          <article class="ai-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Check & govern</h3><p>Validate outputs, test code, challenge assumptions and avoid exposing personal, confidential or sensitive information to unapproved tools.</p></article>
-        </div>
-        <p class="ai-note">This section describes an AI-assisted working approach; it does not claim that every listed project contains a deployed AI feature.</p>
-      </div>
-    </section>
-
-    <section class="section container" id="guide">
-      <div class="section-head"><span class="section-label">Interactive portfolio guide</span><h2>What would you like to know?</h2><p class="section-intro">Use the guide to find the most relevant projects and capabilities. It is a lightweight on-page navigator, not a live generative-AI chatbot.</p></div>
-      <div class="guide-layout">
-        <div class="guide-intro">
-          <h3>Ask about my work</h3>
-          <p>Choose a suggested question or type a topic - for example, machine learning, automation, governance or Python. The guide will point you to relevant information on this site.</p>
-          <div class="prompt-list">
-            <button class="prompt-chip" type="button" data-question="Show me your machine learning projects">Machine learning projects</button>
-            <button class="prompt-chip" type="button" data-question="What automation have you built?">Automation experience</button>
-            <button class="prompt-chip" type="button" data-question="How do you approach security and governance?">Security & governance</button>
-            <button class="prompt-chip" type="button" data-question="Which tools and technologies do you use?">Tools & technologies</button>
+      <div class="pa-shell">
+        <div class="pa-intro">
+          <span class="section-label">INTERACTIVE PORTFOLIO ASSISTANT</span>
+          <h2>Curious about my work? <span>Ask away.</span></h2>
+          <p>Explore my projects, technical capabilities, academic background and experience. Ask a question and let my portfolio guide you to the information that matters.</p>
+          <div class="pa-topics">
+            <span>Machine Learning</span>
+            <span>Data Analytics</span>
+            <span>Automation</span>
+            <span>IT Security</span>
+            <span>Governance</span>
           </div>
+          <div class="pa-note"><span class="pa-note-dot"></span>Explore my professional profile through conversation.</div>
         </div>
-        <div class="guide-box" aria-label="Interactive portfolio guide">
-          <div class="guide-header"><span class="guide-status" aria-hidden="true"></span><strong>Samuel's portfolio guide</strong><span>On-page assistant</span></div>
-          <div class="guide-response" id="guideResponse" aria-live="polite">Hello - I can help you navigate Samuel's portfolio. Ask me about projects, Python, machine learning, automation, security, governance or education.</div>
-          <form class="guide-form" id="guideForm">
-            <label class="visually-hidden" for="guideInput">Ask the portfolio guide</label>
-            <input class="guide-input" id="guideInput" type="text" placeholder="Ask about a skill or project…" autocomplete="off" maxlength="160">
-            <button type="submit" aria-label="Send question"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+
+        <div class="pa-chat" aria-label="Interactive portfolio assistant">
+          <div class="pa-chat-header">
+            <div class="pa-avatar" aria-hidden="true">SA</div>
+            <div class="pa-header-copy">
+              <strong>Samuel's Portfolio Assistant</strong>
+              <span id="paStatus">Portfolio knowledge mode</span>
+            </div>
+            <span class="pa-online"><i></i> READY</span>
+          </div>
+
+          <div class="pa-messages" id="paMessages" aria-live="polite" aria-relevant="additions">
+            <div class="pa-message assistant">
+              <span class="pa-message-label">PORTFOLIO ASSISTANT</span>
+              Hello! Welcome to Samuel's portfolio. Ask me about his machine learning projects, Python skills, automation work, education, IT security interests or professional experience.
+            </div>
+          </div>
+
+          <div class="pa-suggestions" aria-label="Suggested questions">
+            <button type="button" data-pa-prompt="Tell me about Samuel's machine learning project">Machine Learning projects</button>
+            <button type="button" data-pa-prompt="What automation projects has Samuel built?">Automation experience</button>
+            <button type="button" data-pa-prompt="What are Samuel's strongest technical skills?">Technical skills</button>
+            <button type="button" data-pa-prompt="Tell me about Samuel's education and qualifications">Education</button>
+          </div>
+
+          <form class="pa-form" id="paForm">
+            <label class="visually-hidden" for="paInput">Ask a question about Samuel's portfolio</label>
+            <input type="text" id="paInput" placeholder="Ask about Samuel's work..." maxlength="500" autocomplete="off" required>
+            <button type="submit" id="paSend" aria-label="Send question">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+              </svg>
+            </button>
           </form>
+          <div class="pa-footer">Responses are based on the information published in this portfolio. Do not enter confidential or sensitive information.</div>
         </div>
       </div>
     </section>
@@ -462,16 +501,16 @@
     <section class="section container" id="skills">
       <div class="section-head"><span class="section-label">Capabilities</span><h2>A toolkit for turning information into action.</h2><p class="section-intro">A practical blend of analytics, programming, visual communication, automation and information governance.</p></div>
       <div class="skills-grid">
-        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7"/></svg><h3>Data analytics</h3><p>Data preparation, exploratory analysis, KPI development, interpretation and decision-focused reporting.</p></article>
+        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7"/></svg><h3>Data analytics</h3><p>Data preparation, exploratory analysis, KPI development, interpretation and decision focused reporting.</p></article>
         <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><h3>Programming & ML</h3><p>Python, pandas, scikit-learn, classification, Random Forest, PCA, model evaluation and SHAP explainability.</p></article>
         <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3m-3 3h8"/></svg><h3>Visualisation & reporting</h3><p>Tableau, Excel and structured reporting that communicate patterns, performance and operational insight.</p></article>
-        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Security & governance</h3><p>GDPR-aware data handling, information governance, access-conscious processes and clear documentation.</p></article>
+        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Security & governance</h3><p>GDPR aware data handling, information governance, access-conscious processes and clear documentation.</p></article>
       </div>
     </section>
 
     <section class="section container" id="contact">
       <div class="contact-panel">
-        <div><span class="section-label">Let's connect</span><h2>Have a problem worth solving?</h2><p>I'm interested in opportunities and conversations across data analytics, IT, automation and governance-aware digital systems. Get in touch and tell me what you're working on.</p></div>
+        <div><span class="section-label">Let's connect</span><h2>Have a problem worth solving?</h2><p>I'm interested in opportunities and conversations across data analytics, IT, automation and governance aware digital systems. Get in touch and tell me what you're working on.</p></div>
         <div class="contact-actions"><a class="button button-primary" href="mailto:agyekumowuraku@gmail.com?subject=Professional%20Enquiry%20%E2%80%93%20Samuel%20Agyekum">Email me <span aria-hidden="true">↗</span></a><a class="button" href="https://www.linkedin.com/in/samuelbagyekum" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div>
       </div>
     </section>
@@ -558,40 +597,151 @@
     const cvMailto = `mailto:${cvRecipient}?subject=${encodeURIComponent(cvSubject)}&body=${encodeURIComponent(cvBody)}`;
     document.querySelectorAll('[data-cv-request]').forEach(link => link.href = cvMailto);
 
-    // Lightweight, curated portfolio navigator. This is intentionally not labelled
-    // as a live AI chatbot: it uses local keyword matching and contains no API key.
-    const guideResponse = document.getElementById('guideResponse');
-    const guideInput = document.getElementById('guideInput');
-    const guideForm = document.getElementById('guideForm');
-    const guideAnswers = [
-      {keys:['machine learning','ml','shap','pca','random forest','model','football','sports','basketball'], html:'For <strong>machine learning and sports analytics</strong>, start with the <a href="#work">Player Performance ML Pipeline</a>. It covers KPI engineering, predictive modelling, PCA and SHAP-based explainability.'},
-      {keys:['automation','workflow','onboarding','staff','id generation','apps script','forms'], html:'For <strong>workflow automation</strong>, see the <a href="#work">Staff ID Automation</a> project. It demonstrates an anonymised onboarding and ID-generation workflow designed to reduce repetitive administration and improve consistency.'},
-      {keys:['security','governance','gdpr','privacy','information'], html:'My approach to <strong>security and information governance</strong> is to consider privacy, data handling, access and documentation throughout a project. Explore the <a href="#about">problem-solving approach</a> and <a href="#ai-workflow">AI and governance principles</a>.'},
-      {keys:['python','pandas','tableau','excel','technology','tools','skill','scikit','programming'], html:'The core toolkit includes <strong>Python, pandas, scikit-learn, Tableau and Excel</strong>, alongside workflow automation and governance-aware data practices. See the <a href="#skills">capabilities section</a> for more.'},
-      {keys:['education','msc','degree','distinction','university','award','qualification'], html:'Samuel holds an <strong>MSc in Data Analytics & IT Security Management (Distinction)</strong> from Arden University and a BSc in Information Technology (Second Class Upper). See <a href="#about">education and recognition</a>.'},
-      {keys:['pharmacy','inventory','stock'], html:'The <strong>Pharmacy Stock Management System</strong> is an operational project focused on inventory tracking, accuracy and stock visibility. Find it in <a href="#work">selected work</a>.'},
-      {keys:['contact','email','hire','opportunity','connect','cv','resume'], html:'For opportunities or a copy of my CV, use the <a href="#contact">contact section</a> or the <a href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">CV request email link</a>. The CV is supplied on request.'},
-      {keys:['website','wordpress','rich comfort','nagma','digital'], html:'For web and digital work, see the <a href="#work">Rich Comfort Hotel</a> and <a href="#work">Nagma Enfield</a> examples. They demonstrate applied website and digital-service work.'}
-    ];
-    function answerGuide(question) {
+    // Portfolio assistant configuration.
+    // Keep this blank until a secure server endpoint has been created.
+    // Never place an AI provider API key in this public HTML file.
+    const PORTFOLIO_AI_ENDPOINT = '';
+
+    const paMessages = document.getElementById('paMessages');
+    const paForm = document.getElementById('paForm');
+    const paInput = document.getElementById('paInput');
+    const paSend = document.getElementById('paSend');
+    const paStatus = document.getElementById('paStatus');
+    let paHistory = [];
+
+    function paAddMessage(message, role) {
+      const bubble = document.createElement('div');
+      bubble.className = `pa-message ${role}`;
+      bubble.textContent = message;
+      paMessages.appendChild(bubble);
+      paMessages.scrollTop = paMessages.scrollHeight;
+      return bubble;
+    }
+
+    function paPortfolioAnswer(question) {
       const q = question.toLowerCase();
-      const match = guideAnswers.find(answer => answer.keys.some(key => q.includes(key)));
-      return match ? match.html : 'I can help with <strong>machine learning, Python, automation, pharmacy inventory, security, governance, education or contact details</strong>. Try one of those topics, or browse the <a href="#work">selected projects</a> and <a href="#skills">capabilities</a> sections.';
+
+      if (/machine learning|random forest|shap|pca|football|sports|prediction|basketball/.test(q)) {
+        return "Samuel's Player Performance ML Pipeline explores player performance through sports data analytics and predictive modelling. It uses Python, feature engineering, Random Forest, PCA, model evaluation and SHAP explainability. Explore the Selected Work section for the project repository.";
+      }
+
+      if (/automation|workflow|onboarding|staff|id generation|apps script/.test(q)) {
+        return "Samuel's Care Staff ID Automation project demonstrates an anonymised staff onboarding and ID generation workflow. It was designed to improve consistency, reduce repetitive administration and support controlled information handling in a care environment.";
+      }
+
+      if (/pharmacy|inventory|stock|management system/.test(q)) {
+        return "The Pharmacy Stock Management System is an operational project focused on inventory tracking, stock visibility and more consistent records. You can explore its repository from the Selected Work section.";
+      }
+
+      if (/python|pandas|programming|coding|technology|technical skills|tableau|excel/.test(q)) {
+        return "Samuel's technical toolkit includes Python, pandas, scikit learn, Tableau, Excel, Git and GitHub. His work includes data preparation, exploratory analysis, machine learning, visualisation and workflow automation. See the Capabilities section for more detail.";
+      }
+
+      if (/security|governance|gdpr|privacy|information/.test(q)) {
+        return "Samuel's background combines IT security management and data analytics. His interests include GDPR aware data handling, information governance, privacy, access conscious processes and secure documentation.";
+      }
+
+      if (/education|degree|msc|bsc|distinction|university|award|qualification/.test(q)) {
+        return "Samuel completed an MSc in Data Analytics and IT Security Management at Arden University, graduating with Distinction in 2025. He also holds a BSc in Information Technology from Ghana Communication Technology University, achieving Second Class Upper Division. His academic recognition includes the Arden Achiever Postgraduate School of STEM Award and the Vice Chancellor Award.";
+      }
+
+      if (/career|role|job|opportunity|interest|work with|recruit/.test(q)) {
+        return "Samuel is interested in opportunities across data analytics, IT, information security, business intelligence, digital operations and workflow automation. His portfolio demonstrates practical projects that connect technical analysis with operational problem solving.";
+      }
+
+      if (/contact|email|hire|connect|cv|resume/.test(q)) {
+        return "You can contact Samuel at agyekumowuraku@gmail.com or connect on LinkedIn at linkedin.com/in/samuelbagyekum. His CV is available on request through the Request my CV link.";
+      }
+
+      if (/website|wordpress|rich comfort|nagma|digital platform/.test(q)) {
+        return "Samuel has worked on digital web projects including Rich Comfort Hotel and Nagma Enfield. These demonstrate his involvement in website development and practical digital service projects.";
+      }
+
+      return "I can help you explore Samuel's machine learning projects, Python skills, automation work, pharmacy system, security and governance background, education or career interests. Try asking about one of these topics, or browse the Selected Work and Capabilities sections.";
     }
-    function askGuide(question) {
-      const clean = question.trim();
-      if (!clean) return;
-      guideResponse.textContent = '';
-      const answer = document.createElement('div');
-      answer.innerHTML = `<strong>You asked:</strong> ${clean.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}<br><br>${answerGuide(clean)}`;
-      guideResponse.appendChild(answer);
-      guideInput.value = '';
+
+    function paShowTyping() {
+      const typing = document.createElement('div');
+      typing.className = 'pa-message assistant';
+      typing.id = 'paTyping';
+      typing.setAttribute('aria-label', 'Assistant is preparing a response');
+
+      const label = document.createElement('span');
+      label.className = 'pa-message-label';
+      label.textContent = 'THINKING';
+
+      const dots = document.createElement('div');
+      dots.className = 'pa-typing';
+      for (let i = 0; i < 3; i++) dots.appendChild(document.createElement('span'));
+
+      typing.append(label, dots);
+      paMessages.appendChild(typing);
+      paMessages.scrollTop = paMessages.scrollHeight;
     }
-    guideForm.addEventListener('submit', event => {
+
+    async function paAsk(question) {
+      const cleanQuestion = question.trim();
+      if (!cleanQuestion || paSend.disabled) return;
+
+      paAddMessage(cleanQuestion, 'user');
+      paHistory.push({ role: 'user', content: cleanQuestion });
+      paInput.value = '';
+      paSend.disabled = true;
+      paStatus.textContent = PORTFOLIO_AI_ENDPOINT ? 'Connecting to the assistant' : 'Preparing a portfolio response';
+      paShowTyping();
+
+      try {
+        let answer;
+
+        if (PORTFOLIO_AI_ENDPOINT.trim()) {
+          const response = await fetch(PORTFOLIO_AI_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: cleanQuestion, history: paHistory.slice(-8) })
+          });
+
+          if (!response.ok) throw new Error('Assistant service is unavailable.');
+
+          const data = await response.json();
+          if (!data.reply || typeof data.reply !== 'string') {
+            throw new Error('The assistant returned an invalid response.');
+          }
+
+          answer = data.reply;
+          paStatus.textContent = 'Connected assistant';
+        } else {
+          answer = paPortfolioAnswer(cleanQuestion);
+          paStatus.textContent = 'Portfolio knowledge mode';
+        }
+
+        document.getElementById('paTyping')?.remove();
+        paAddMessage(answer, 'assistant');
+        paHistory.push({ role: 'assistant', content: answer });
+        paHistory = paHistory.slice(-8);
+      } catch (error) {
+        document.getElementById('paTyping')?.remove();
+        paAddMessage('Sorry, I could not process that question just now. Please try again or contact Samuel at agyekumowuraku@gmail.com.', 'assistant');
+        paStatus.textContent = 'Assistant temporarily unavailable';
+        console.error('Portfolio assistant error:', error);
+      } finally {
+        paSend.disabled = false;
+        paInput.focus();
+      }
+    }
+
+    paForm.addEventListener('submit', event => {
       event.preventDefault();
-      askGuide(guideInput.value);
+      paAsk(paInput.value);
     });
-    document.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => askGuide(button.dataset.question)));
+
+    document.querySelectorAll('[data-pa-prompt]').forEach(button => {
+      button.addEventListener('click', () => paAsk(button.dataset.paPrompt));
+    });
+
+    paStatus.textContent = PORTFOLIO_AI_ENDPOINT.trim()
+      ? 'Connected assistant'
+      : 'Portfolio knowledge mode';
+
   </script>
 </body>
 </html>
