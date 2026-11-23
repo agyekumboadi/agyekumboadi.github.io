@@ -1,786 +1,597 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Samuel Agyekum | Portfolio</title>
-  <meta name="description" content="Data Analytics & IT Security | Python • Tableau • ML • Automation" />
-
-  <!-- Modern meta (2026-friendly) -->
-  <meta name="theme-color" content="#0b1220" />
-  <meta name="color-scheme" content="dark light" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Samuel Agyekum | Data Analytics & IT Security" />
-  <meta property="og:description" content="Python ML pipelines, automation, dashboards, and governance-aware analytics." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://agyekumboadi.github.io/" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#08111f">
+  <title>Samuel Agyekum | Data, Automation & Digital Systems</title>
+  <meta name="description" content="Samuel Agyekum — data analytics, applied machine learning, workflow automation and governance-aware digital systems.">
+  <meta name="author" content="Samuel Agyekum">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Samuel Agyekum | Data, Automation & Digital Systems">
+  <meta property="og:description" content="Practical analytics, explainable machine learning and automation for better decisions and dependable operations.">
+  <meta property="og:url" content="https://agyekumboadi.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://agyekumboadi.github.io/">
   <style>
-    :root{
-      /* Bright, modern dark (less heavy) */
-      --bg: #071025;
-      --bg2:#0b1a3a;
-      --card: rgba(255,255,255,.08);
-      --card2: rgba(255,255,255,.12);
-      --line: rgba(255,255,255,.14);
-      --text:#f7f8fc;
-      --muted:#d2daea;
-      --muted2:#a9b7d3;
-
-      --accent:#60a5fa;   /* blue */
-      --accent2:#a78bfa;  /* purple */
-      --accent3:#34d399;  /* green */
-      --accent4:#fbbf24;  /* amber */
-      --shadow: 0 18px 70px rgba(0,0,0,.28);
-      --radius: 20px;
-
-      --focus: 0 0 0 3px rgba(96,165,250,.40);
+    :root {
+      color-scheme: dark;
+      --bg: #08111f;
+      --bg-soft: #0d1929;
+      --surface: rgba(17, 31, 49, .78);
+      --surface-solid: #112139;
+      --surface-2: #172a43;
+      --text: #f2f6fc;
+      --muted: #a9b8cb;
+      --muted-2: #8194ad;
+      --line: rgba(180, 202, 226, .14);
+      --accent: #a3e635;
+      --accent-2: #54d5c5;
+      --accent-3: #8bb8ff;
+      --danger: #fca5a5;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .28);
+      --radius: 22px;
+      --max: 1180px;
+      --focus: 0 0 0 3px rgba(163, 230, 53, .3);
     }
-
-    /* Optional light mode (toggle) */
-    :root[data-theme="light"]{
-      --bg:#f6f7fb;
-      --bg2:#eef2ff;
-      --card: rgba(17,24,39,.04);
-      --card2: rgba(17,24,39,.06);
-      --line: rgba(17,24,39,.10);
-      --text:#0b1020;
-      --muted:#1f2a44;
-      --muted2:#4b5a78;
-      --shadow: 0 18px 60px rgba(17,24,39,.12);
-      --focus: 0 0 0 3px rgba(96,165,250,.35);
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --bg-soft: #eaf0f7;
+      --surface: rgba(255,255,255,.82);
+      --surface-solid: #fff;
+      --surface-2: #edf3f8;
+      --text: #142237;
+      --muted: #4c5e74;
+      --muted-2: #687a90;
+      --line: rgba(26, 52, 82, .13);
+      --accent: #4d7c0f;
+      --accent-2: #087f79;
+      --accent-3: #275ca8;
+      --shadow: 0 20px 60px rgba(35, 54, 77, .1);
+      --focus: 0 0 0 3px rgba(77, 124, 15, .2);
     }
-
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x:hidden;
-
-      /* Brighter background */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      margin: 0; min-width: 320px; color: var(--text);
       background:
-        radial-gradient(900px 600px at 12% -5%, rgba(96,165,250,.55), transparent 60%),
-        radial-gradient(900px 600px at 92% 10%, rgba(167,139,250,.40), transparent 55%),
-        radial-gradient(700px 500px at 40% 105%, rgba(52,211,153,.22), transparent 60%),
-        radial-gradient(700px 500px at 75% 90%, rgba(251,191,36,.18), transparent 60%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+        radial-gradient(ellipse at 12% 0%, rgba(84,213,197,.12), transparent 34rem),
+        radial-gradient(ellipse at 90% 8%, rgba(139,184,255,.13), transparent 32rem),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; overflow-x: hidden;
     }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: none; box-shadow: var(--focus); }
+    img { display: block; max-width: 100%; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+    .skip-link { position: fixed; z-index: 2000; top: 12px; left: 12px; padding: 10px 14px; transform: translateY(-160%); background: var(--surface-solid); border: 1px solid var(--line); border-radius: 10px; }
+    .skip-link:focus { transform: translateY(0); }
+    .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(18px); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 210px; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; color: #10200b; background: var(--accent); font-weight: 900; letter-spacing: -.06em; box-shadow: 0 8px 24px rgba(163,230,53,.14); }
+    .brand-copy { display: grid; line-height: 1.15; }
+    .brand-copy strong { font-size: .92rem; letter-spacing: .01em; }
+    .brand-copy span { margin-top: 5px; color: var(--muted-2); font-size: .71rem; letter-spacing: .09em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 25px; }
+    .nav-links a:not(.button) { color: var(--muted); font-size: .88rem; font-weight: 650; transition: color .2s ease; }
+    .nav-links a:not(.button):hover { color: var(--text); }
+    .nav-actions { display: flex; align-items: center; gap: 9px; }
+    .icon-button, .menu-button { width: 42px; height: 42px; display: inline-grid; place-items: center; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--text); cursor: pointer; }
+    .icon-button svg, .menu-button svg { width: 18px; height: 18px; }
+    .menu-button { display: none; }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 11px 16px; border: 1px solid var(--line); border-radius: 13px; background: var(--surface); color: var(--text); font-size: .9rem; font-weight: 750; cursor: pointer; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
+    .button-primary { border-color: transparent; color: #14200d; background: var(--accent); }
+    .button-primary:hover { background: color-mix(in srgb, var(--accent) 86%, white); }
+    .button-quiet { background: transparent; }
+    .button svg { width: 17px; height: 17px; flex: none; }
 
-    a{color:inherit; text-decoration:none}
-    a:focus-visible, button:focus-visible{outline:none; box-shadow: var(--focus); border-radius: 12px;}
-    .skip{
-      position:absolute; left:-999px; top:10px;
-      background: var(--card2); border:1px solid var(--line);
-      padding:10px 12px; border-radius:12px;
-      z-index:999;
-    }
-    .skip:focus{left:10px}
+    .hero { padding: 76px 0 55px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); gap: 55px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 15%, transparent); }
+    h1 { max-width: 800px; margin: 22px 0 20px; font-size: clamp(2.8rem, 6vw, 5.55rem); line-height: .99; letter-spacing: -.065em; font-weight: 850; }
+    .gradient-text { color: var(--accent); }
+    .hero-copy { max-width: 710px; margin: 0; color: var(--muted); font-size: clamp(1rem, 1.7vw, 1.16rem); line-height: 1.8; }
+    .hero-copy strong { color: var(--text); font-weight: 700; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .social-row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 27px; color: var(--muted-2); font-size: .84rem; }
+    .social-row a { display: inline-flex; align-items: center; gap: 7px; transition: color .2s ease; }
+    .social-row a:hover { color: var(--accent); }
+    .social-row svg { width: 16px; height: 16px; }
+    .hero-visual { position: relative; min-height: 430px; display: grid; place-items: center; }
+    .visual-orbit { position: absolute; width: min(100%, 410px); aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; }
+    .visual-orbit::before, .visual-orbit::after { content: ""; position: absolute; border: 1px solid var(--line); border-radius: 50%; inset: 10%; }
+    .visual-orbit::after { inset: 23%; border-style: dashed; opacity: .8; }
+    .portrait-card { position: relative; z-index: 2; width: min(78%, 300px); padding: 12px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: var(--shadow); transform: rotate(2deg); }
+    .portrait-frame { overflow: hidden; aspect-ratio: 4 / 4.7; border-radius: 19px; background: var(--surface-2); }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; }
+    .portrait-caption { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 13px 4px 3px; }
+    .portrait-caption strong { font-size: .91rem; }
+    .portrait-caption span { color: var(--muted-2); font-size: .72rem; }
+    .float-card { position: absolute; z-index: 3; display: flex; align-items: center; gap: 11px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface-solid); box-shadow: var(--shadow); }
+    .float-card.one { top: 12%; left: -2%; }
+    .float-card.two { right: -3%; bottom: 15%; }
+    .float-icon { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 11px; background: color-mix(in srgb, var(--accent) 16%, var(--surface-2)); color: var(--accent); }
+    .float-icon svg { width: 18px; height: 18px; }
+    .float-copy { display: grid; line-height: 1.25; }
+    .float-copy strong { font-size: .83rem; }
+    .float-copy span { margin-top: 4px; color: var(--muted-2); font-size: .7rem; }
 
-    .wrap{
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 18px 16px 72px;
-    }
+    .trust-strip { padding: 19px 22px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; border-block: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 50%, transparent); }
+    .trust-item { display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--muted); font-size: .84rem; font-weight: 700; text-align: center; }
+    .trust-item svg { width: 18px; height: 18px; color: var(--accent-2); flex: none; }
+    .section { padding: 88px 0; }
+    .section-head { max-width: 720px; margin-bottom: 30px; }
+    .section-label { color: var(--accent-2); font-size: .75rem; font-weight: 850; letter-spacing: .13em; text-transform: uppercase; }
+    h2 { margin: 9px 0 10px; font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.08; letter-spacing: -.05em; }
+    .section-intro { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.8; }
 
-    /* Sticky nav */
-    .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: color-mix(in oklab, var(--bg) 55%, transparent);
-      border-bottom: 1px solid color-mix(in oklab, var(--line) 75%, transparent);
-    }
-    .nav-inner{
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 12px;
-    }
+    .work-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 19px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; }
+    .filter-button { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: transparent; color: var(--muted); font-size: .78rem; font-weight: 750; cursor: pointer; }
+    .filter-button[aria-pressed="true"] { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); background: color-mix(in srgb, var(--accent) 12%, var(--surface)); color: var(--text); }
+    .project-search { width: min(100%, 260px); min-height: 40px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); background: var(--surface); }
+    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .project-card { min-height: 300px; display: flex; flex-direction: column; padding: 21px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: 0 12px 35px rgba(0,0,0,.06); transition: transform .22s ease, border-color .22s ease, background .22s ease; }
+    .project-card[hidden] { display: none; }
+    .project-card:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--accent-2) 50%, var(--line)); background: var(--surface-solid); }
+    .project-topline { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 25px; }
+    .project-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 13px; color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 12%, var(--surface-2)); }
+    .project-icon svg { width: 21px; height: 21px; }
+    .project-type { color: var(--muted-2); font-size: .72rem; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+    .project-card h3 { margin: 0 0 9px; font-size: 1.12rem; line-height: 1.3; letter-spacing: -.025em; }
+    .project-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.7; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+    .tag { padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted-2); font-size: .69rem; font-weight: 700; }
+    .project-link { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 22px; color: var(--accent); font-size: .84rem; font-weight: 800; }
+    .project-link svg { width: 15px; height: 15px; transition: transform .2s ease; }
+    .project-link:hover svg { transform: translateX(4px); }
+    .empty-state { display: none; padding: 30px; border: 1px dashed var(--line); border-radius: 16px; color: var(--muted); text-align: center; }
 
-    /* Brand with small “logo” image top-left */
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      min-width: 200px;
-    }
-    .logo{
-      width: 32px; height: 32px;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 30px rgba(0,0,0,.20);
-      background: var(--card);
-      flex: 0 0 auto;
-    }
-    .brand-name{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand-name strong{
-      font-weight: 950;
-      letter-spacing: .2px;
-      font-size: 14px;
-    }
-    .brand-name span{
-      font-size: 12px;
-      color: var(--muted2);
-      margin-top: 2px;
-      white-space:nowrap;
-    }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: stretch; }
+    .panel { padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .panel h3 { margin: 0 0 12px; font-size: 1.2rem; letter-spacing: -.03em; }
+    .panel p { margin: 0 0 12px; color: var(--muted); font-size: .92rem; line-height: 1.8; }
+    .panel p:last-child { margin-bottom: 0; }
+    .principles { display: grid; gap: 15px; margin-top: 20px; }
+    .principle { display: grid; grid-template-columns: 35px 1fr; gap: 12px; align-items: start; }
+    .principle-number { width: 31px; height: 31px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 10px; color: var(--accent); font-size: .75rem; font-weight: 850; }
+    .principle strong { display: block; margin-bottom: 3px; font-size: .9rem; }
+    .principle span { display: block; color: var(--muted); font-size: .83rem; }
+    .education-list { display: grid; gap: 15px; margin-top: 20px; }
+    .education-item { padding-left: 15px; border-left: 2px solid var(--accent-2); }
+    .education-item strong { display: block; font-size: .93rem; }
+    .education-item span { display: block; margin-top: 3px; color: var(--muted); font-size: .82rem; }
 
-    /* Nav actions */
-    .nav-actions{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      justify-content:flex-end;
-    }
+    .ai-section { position: relative; overflow: hidden; padding: 33px; border: 1px solid var(--line); border-radius: 28px; background: linear-gradient(135deg, color-mix(in srgb, var(--accent-2) 9%, var(--surface-solid)), color-mix(in srgb, var(--accent-3) 9%, var(--surface-solid))); }
+    .ai-section::after { content: ""; position: absolute; width: 360px; height: 360px; right: -140px; top: -200px; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 0 35px color-mix(in srgb, var(--line) 35%, transparent), 0 0 0 70px color-mix(in srgb, var(--line) 20%, transparent); pointer-events: none; }
+    .ai-top { position: relative; z-index: 1; display: flex; align-items: start; justify-content: space-between; gap: 20px; }
+    .ai-top .section-head { margin-bottom: 23px; }
+    .ai-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .ai-card { padding: 19px; border: 1px solid var(--line); border-radius: 17px; background: color-mix(in srgb, var(--surface-solid) 78%, transparent); }
+    .ai-card svg { width: 22px; height: 22px; margin-bottom: 13px; color: var(--accent-2); }
+    .ai-card h3 { margin: 0 0 7px; font-size: .97rem; }
+    .ai-card p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.7; }
+    .ai-note { position: relative; z-index: 1; margin: 18px 0 0; color: var(--muted-2); font-size: .77rem; }
 
-    .iconbtn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      border:1px solid var(--line);
-      background: var(--card);
-      padding:10px 12px;
-      border-radius: 999px;
-      font-weight: 900;
-      transition: .2s ease;
-      white-space:nowrap;
-    }
-    .iconbtn:hover{
-      transform: translateY(-1px);
-      background: var(--card2);
-      border-color: color-mix(in oklab, var(--accent) 55%, var(--line));
-    }
+    .guide-layout { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 18px; align-items: stretch; }
+    .guide-intro { padding: 27px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .guide-intro h3 { margin: 0 0 10px; font-size: 1.3rem; }
+    .guide-intro p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.8; }
+    .prompt-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
+    .prompt-chip { padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: transparent; font-size: .76rem; cursor: pointer; }
+    .prompt-chip:hover { border-color: var(--accent-2); color: var(--text); }
+    .guide-box { min-height: 310px; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+    .guide-header { display: flex; align-items: center; gap: 10px; padding: 16px 19px; border-bottom: 1px solid var(--line); }
+    .guide-status { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 14%, transparent); }
+    .guide-header strong { font-size: .87rem; }
+    .guide-header span { margin-left: auto; color: var(--muted-2); font-size: .7rem; }
+    .guide-response { flex: 1; min-height: 170px; padding: 21px; color: var(--muted); font-size: .9rem; line-height: 1.8; }
+    .guide-response strong { color: var(--text); }
+    .guide-response a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .guide-form { display: flex; gap: 9px; padding: 13px; border-top: 1px solid var(--line); }
+    .guide-input { flex: 1; min-width: 0; padding: 11px 13px; border: 1px solid var(--line); border-radius: 11px; background: var(--bg-soft); color: var(--text); }
+    .guide-form button { width: 43px; flex: none; border: 0; border-radius: 11px; color: #14200d; background: var(--accent); cursor: pointer; }
+    .guide-form button svg { width: 18px; height: 18px; }
 
-    /* Theme toggle */
-    .toggle{
-      width: 44px;
-      padding: 10px;
-    }
-    .toggle svg{width:18px;height:18px}
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
+    .skill-card { padding: 21px; border: 1px solid var(--line); border-radius: 18px; background: var(--surface); }
+    .skill-card svg { width: 21px; height: 21px; margin-bottom: 14px; color: var(--accent-2); }
+    .skill-card h3 { margin: 0 0 8px; font-size: .94rem; }
+    .skill-card p { margin: 0; color: var(--muted); font-size: .81rem; line-height: 1.75; }
 
-    /* Hamburger */
-    .hamburger{
-      width: 44px;
-      padding: 10px;
-    }
-    .hamburger span{
-      display:block;
-      width: 18px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 2px;
-      margin: 3px 0;
-      transition: .2s ease;
-      opacity: .95;
-    }
-    .hamburger[aria-expanded="true"] span:nth-child(1){transform: translateY(5px) rotate(45deg)}
-    .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
-    .hamburger[aria-expanded="true"] span:nth-child(3){transform: translateY(-5px) rotate(-45deg)}
+    .contact-panel { display: grid; grid-template-columns: 1fr auto; gap: 25px; align-items: center; padding: 38px; border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--line)); border-radius: 26px; background: linear-gradient(115deg, color-mix(in srgb, var(--accent) 10%, var(--surface-solid)), var(--surface)); }
+    .contact-panel h2 { margin-top: 7px; font-size: clamp(2rem, 4vw, 2.9rem); }
+    .contact-panel p { max-width: 620px; margin: 0; color: var(--muted); }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .site-footer { padding: 28px 0 35px; border-top: 1px solid var(--line); color: var(--muted-2); font-size: .79rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+    .footer-links a:hover { color: var(--accent); }
 
-    /* Collapsible menu */
-    .menu{
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 16px 12px;
-      display:none;
+    @media (max-width: 1000px) {
+      .nav-links { gap: 15px; }
+      .hero { gap: 25px; }
+      .project-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .menu.open{display:block}
-    .menu-panel{
-      background: color-mix(in oklab, var(--card2) 70%, transparent);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
-      padding: 12px;
+    @media (max-width: 760px) {
+      .container { width: min(100% - 32px, var(--max)); }
+      .nav { min-height: 68px; }
+      .brand { min-width: 0; }
+      .menu-button { display: inline-grid; }
+      .nav-links { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: none; padding: 14px 20px 20px; border-bottom: 1px solid var(--line); background: var(--bg); box-shadow: var(--shadow); }
+      .nav-links.open { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .nav-links a:not(.button) { padding: 10px 9px; border-radius: 9px; background: var(--surface); }
+      .nav-links .button { grid-column: 1 / -1; }
+      .hero { padding: 56px 0 42px; grid-template-columns: 1fr; }
+      .hero-visual { min-height: 350px; }
+      .visual-orbit { width: 320px; }
+      .portrait-card { width: 230px; }
+      .float-card.one { left: 4%; top: 8%; }
+      .float-card.two { right: 2%; bottom: 9%; }
+      .trust-strip { grid-template-columns: repeat(2, 1fr); padding-inline: 10px; }
+      .section { padding: 66px 0; }
+      .about-layout, .guide-layout { grid-template-columns: 1fr; }
+      .ai-grid { grid-template-columns: 1fr; }
+      .contact-panel { grid-template-columns: 1fr; padding: 27px; }
     }
-    .menu-grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
+    @media (max-width: 520px) {
+      .container { width: min(100% - 26px, var(--max)); }
+      .brand-copy span { display: none; }
+      .nav-actions { gap: 6px; }
+      .nav-links.open { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(2.65rem, 13vw, 3.7rem); }
+      .hero-ctas .button { width: 100%; }
+      .social-row { gap: 13px; }
+      .float-card { padding: 10px; }
+      .float-card.one { left: 0; }
+      .float-card.two { right: 0; }
+      .float-copy strong { font-size: .75rem; }
+      .float-copy span { font-size: .65rem; }
+      .project-grid, .skills-grid { grid-template-columns: 1fr; }
+      .work-toolbar { align-items: stretch; }
+      .project-search { width: 100%; }
+      .panel, .guide-intro { padding: 22px; }
+      .ai-section { padding: 24px 18px; }
+      .guide-form { padding: 10px; }
+      .contact-actions .button { width: 100%; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
     }
-    .menu a{
-      border:1px solid var(--line);
-      background: var(--card);
-      padding: 12px 12px;
-      border-radius: 14px;
-      font-weight: 900;
-      transition: .2s ease;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-    }
-    .menu a:hover{
-      transform: translateY(-1px);
-      background: var(--card2);
-      border-color: color-mix(in oklab, var(--accent2) 55%, var(--line));
-    }
-    .hint{
-      margin: 10px 2px 0;
-      color: var(--muted2);
-      font-size: 13px;
-    }
-
-    /* Main hero */
-    .hero{
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 16px;
-      align-items:stretch;
-    }
-
-    .card{
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-    }
-
-    .card.glass{
-      background: linear-gradient(180deg,
-        color-mix(in oklab, var(--card2) 75%, transparent),
-        color-mix(in oklab, var(--card) 80%, transparent)
-      );
-    }
-
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:950;
-      background: color-mix(in oklab, var(--card2) 70%, transparent);
-      border:1px solid var(--line);
-      padding: 8px 10px;
-      border-radius: 999px;
-    }
-    .kicker i{
-      width:8px;height:8px;border-radius:999px;
-      background: var(--accent3);
-      box-shadow: 0 0 14px rgba(52,211,153,.45);
-      display:inline-block;
-    }
-
-    h1{
-      margin: 12px 0 10px;
-      font-size: 44px;
-      line-height: 1.06;
-      letter-spacing: -.4px;
-    }
-    .subtitle{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 72ch;
-    }
-
-    .badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 12px;
-    }
-    .badge{
-      font-size: 13px;
-      font-weight: 900;
-      border: 1px solid var(--line);
-      background: color-mix(in oklab, var(--card2) 65%, transparent);
-      padding: 8px 10px;
-      border-radius: 999px;
-      white-space:nowrap;
-    }
-
-    .cta{
-      display:flex;
-      gap: 10px;
-      flex-wrap:wrap;
-      margin-top: 16px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      font-weight: 950;
-      border: 1px solid var(--line);
-      background: var(--card);
-      transition: .2s ease;
-      white-space:nowrap;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      background: var(--card2);
-      border-color: color-mix(in oklab, var(--accent2) 55%, var(--line));
-    }
-    .btn.primary{
-      border-color: color-mix(in oklab, var(--accent) 65%, var(--line));
-      background: linear-gradient(90deg,
-        rgba(96,165,250,.26),
-        rgba(167,139,250,.18)
-      );
-    }
-
-    /* Profile card */
-    .profile{
-      display:flex;
-      flex-direction:column;
-      gap: 14px;
-      justify-content: space-between;
-    }
-    .profile-top{
-      display:flex;
-      align-items:center;
-      gap: 14px;
-    }
-    .photo{
-      width: 92px;
-      height: 92px;
-      border-radius: 18px;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 40px rgba(0,0,0,.22);
-      background: var(--card);
-      flex: 0 0 auto;
-    }
-    .profile-name{
-      font-weight: 950;
-      font-size: 18px;
-      line-height: 1.2;
-    }
-    .small{
-      color: var(--muted2);
-      font-size: 14px;
-      margin-top: 4px;
-    }
-    .contact{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px;
-      align-items:center;
-      margin-top: 8px;
-    }
-    .chip{
-      display:inline-flex;
-      gap:8px;
-      align-items:center;
-      border: 1px solid var(--line);
-      background: var(--card);
-      padding: 10px 12px;
-      border-radius: 14px;
-      font-weight: 900;
-      transition:.2s ease;
-    }
-    .chip:hover{background: var(--card2); border-color: color-mix(in oklab, var(--accent) 60%, var(--line));}
-
-    /* Sections */
-    .section{margin-top: 18px;}
-    .section h2{
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: .2px;
-      font-weight: 950;
-    }
-    .section .hint2{
-      margin: 0 0 14px;
-      color: var(--muted2);
-      font-size: 14px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .proj{
-      padding: 16px;
-      border-radius: 18px;
-      border: 1px solid var(--line);
-      background: var(--card);
-      transition: .2s ease;
-      min-height: 178px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap: 10px;
-      position: relative;
-      overflow:hidden;
-    }
-    .proj::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(600px 220px at 20% 0%, rgba(96,165,250,.22), transparent 55%),
-                  radial-gradient(600px 220px at 90% 20%, rgba(167,139,250,.18), transparent 55%);
-      opacity:0;
-      transition:.2s ease;
-      pointer-events:none;
-    }
-    .proj:hover::before{opacity:1}
-    .proj:hover{
-      transform: translateY(-2px);
-      border-color: color-mix(in oklab, var(--accent) 60%, var(--line));
-      background: var(--card2);
-    }
-    .proj h3{
-      margin:0 0 6px;
-      font-size: 16px;
-      line-height: 1.25;
-      font-weight: 950;
-      position:relative;
-      z-index:1;
-    }
-    .proj p{
-      margin:0;
-      color: var(--muted);
-      font-size: 14px;
-      position:relative;
-      z-index:1;
-    }
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      margin-top: 10px;
-      position:relative;
-      z-index:1;
-    }
-    .tag{
-      font-size: 12px;
-      font-weight: 900;
-      border: 1px solid var(--line);
-      background: color-mix(in oklab, var(--card2) 60%, transparent);
-      padding: 6px 8px;
-      border-radius: 999px;
-    }
-
-    /* Footer */
-    .footer{
-  margin-top: 22px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap: 10px;
-  flex-wrap:wrap;
-  text-align:center;
-  color: var(--muted2);
-  font-size: 13px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-}
-    .mutedlink{
-      color: color-mix(in oklab, var(--text) 92%, transparent);
-      text-decoration: underline;
-      text-decoration-color: rgba(96,165,250,.35);
-      text-underline-offset: 3px;
-    }
-
-    /* Desktop: keep hamburger but show menu inline as well */
-    @media (min-width: 980px){
-      .menu{display:block}
-      .menu-panel{padding: 10px}
-      .menu-grid{grid-template-columns: repeat(6, 1fr)}
-      .hint{display:none}
-      .hamburger{display:none}
-    }
-
-    /* Mobile */
-    @media (max-width: 980px){
-      h1{font-size: 38px}
-      .hero{grid-template-columns: 1fr}
-      .grid{grid-template-columns: 1fr}
-      .wrap{padding-bottom: 56px}
-      .menu-grid{grid-template-columns: 1fr}
-    }
-    @media (max-width: 520px){
-      h1{font-size: 32px}
-      .btn{width:100%}
-      .photo{width:84px;height:84px}
-      .brand{min-width: unset}
-      .brand-name span{display:none}
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{scroll-behavior:auto}
-      .iconbtn,.btn,.proj,.pill,.chip,.hamburger span{transition:none!important}
-      .iconbtn:hover,.btn:hover,.proj:hover,.pill:hover,.chip:hover{transform:none!important}
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
-
 <body>
-  <a class="skip" href="#content">Skip to content</a>
-
-  <header class="nav">
-    <div class="nav-inner">
-      <!-- Small logo on top-left (uses your uploaded profile image) -->
-      <div class="brand">
-        <img class="logo" src="assets/profile.png" alt="Samuel Agyekum logo" />
-        <div class="brand-name">
-          <strong>Samuel Agyekum</strong>
-          <span>Data • Security • Automation</span>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Samuel Agyekum home">
+        <span class="brand-mark" aria-hidden="true">SA</span>
+        <span class="brand-copy"><strong>Samuel Agyekum</strong><span>Data · Security · Automation</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#work">Selected work</a>
+        <a href="#about">About</a>
+        <a href="#ai-workflow">AI & tools</a>
+        <a href="#skills">Capabilities</a>
+        <a href="#contact">Contact</a>
+        <a class="button button-primary" data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request my CV <span aria-hidden="true">↗</span></a>
       </div>
-
       <div class="nav-actions">
-        <!-- Theme toggle (relevant enhancement) -->
-        <button class="iconbtn toggle" id="themeToggle" type="button" aria-label="Toggle theme">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
         </button>
-
-        <!-- Hamburger for mobile -->
-        <button class="iconbtn hamburger" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
-          <span></span><span></span><span></span>
+        <button class="menu-button" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
         </button>
       </div>
-    </div>
-
-    <!-- Collapsible menu (shows as grid on desktop, collapsible on mobile) -->
-    <div class="menu" id="menu">
-      <div class="menu-panel">
-        <div class="menu-grid">
-          <a href="#projects">Projects <span>→</span></a>
-          <a href="#more-projects">More <span>→</span></a>
-          <a href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">CV <span>↗</span></a>
-          <a href="https://github.com/agyekumboadi" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
-          <a href="https://www.linkedin.com/in/samuelbagyekum" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-          <a href="https://www.tiktok.com/@owurakuagyekum?_r=1&_t=ZS-93mztNyhdqP" target="_blank" rel="noreferrer">TikTok <span>↗</span></a>
-          <a href="https://www.facebook.com/share/17rRnU31Gu/?mibextid=wwXIfr" target="_blank" rel="noreferrer">Facebook <span>↗</span></a>
-          <a href="mailto:agyekumowuraku@gmail.com">Email <span>→</span></a>
-        </div>
-        <div class="hint">Tip: On mobile, tap the ☰ button to open/close this menu.</div>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <main class="wrap" id="content">
-    <section class="hero">
-      <div class="card glass">
-        <div class="kicker"><i></i> Data • Security • Automation</div>
-        <h1>Agyekum: The Analytics Engineer</h1>
-
-        <p class="subtitle">
-          I build practical analytics, workflow automation, and Machine Learning (ML) solutions in <strong>Python</strong> that improve operational efficiency and decision-making.
-          This portfolio features an end-to-end <strong>Player Performance ML Pipeline</strong>, a <strong>Pharmacy Inventory & Revenue Analytics System</strong>,
-          and an <strong>automated staff onboarding/ID generation workflow</strong> for a regulated healthcare environment.
-          I focus on clean data workflows, explainable insights, and reliable reporting that supports real-world decisions.
-        </p>
-
-        <div class="badges">
-          <span class="badge">Python (pandas, scikit-learn)</span>
-          <span class="badge">ML • PCA • SHAP</span>
-          <span class="badge">Automation • Workflows</span>
-          <span class="badge">Tableau • Storytelling</span>
-          <span class="badge">Data Governance • GDPR</span>
+  <main id="main">
+    <section class="hero container" id="top">
+      <div>
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Data · Digital systems · Practical problem-solving</span>
+        <h1>I turn data into <span class="gradient-text">decisions</span> and ideas into systems.</h1>
+        <p class="hero-copy">I'm <strong>Samuel Agyekum</strong> — a data analytics and IT security professional interested in building practical analytics, explainable machine learning and workflow automation. I connect technical work with the real operational problems it is meant to solve.</p>
+        <div class="hero-ctas">
+          <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+          <a class="button" data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request my CV <span aria-hidden="true">↗</span></a>
         </div>
-
-        <div class="cta">
-          <a class="btn primary" href="#projects">View Projects ↓</a>
-          <a class="btn" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">Open CV</a>
-          <a class="btn" href="#more-projects">More Projects</a>
+        <div class="social-row" aria-label="Social links">
+          <a href="https://github.com/agyekumboadi" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.53v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.69 2.59 1.2 3.22.92.1-.72.39-1.2.7-1.48-2.47-.28-5.07-1.24-5.07-5.5 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3.01 0 4.27-2.6 5.21-5.08 5.49.4.35.75 1.03.75 2.08V22c0 .29.2.63.77.52A11.1 11.1 0 0 0 12 .9Z"/></svg> GitHub</a>
+          <a href="https://www.linkedin.com/in/samuelbagyekum" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.35H4.96V9.02h2.97v9.33ZM6.45 7.75a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm11.9 10.6h-2.97v-4.54c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.62H9.18V9.02h2.85v1.27h.04c.4-.73 1.37-1.5 2.82-1.5 3.02 0 3.58 1.98 3.58 4.56v5Z"/></svg> LinkedIn</a>
+          <a href="mailto:agyekumowuraku@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg> Email</a>
         </div>
       </div>
-
-      <aside class="card profile" aria-label="Profile">
-        <div class="profile-top">
-          <img class="photo" src="assets/profile.png" alt="Samuel Agyekum" />
-          <div>
-            <div class="profile-name">Samuel Agyekum</div>
-            <div class="small">MSc Data Analytics & IT Security Management</div>
-            <div class="small">London, UK</div>
-          </div>
+      <div class="hero-visual" aria-label="Profile photograph and professional highlights">
+        <div class="visual-orbit" aria-hidden="true"></div>
+        <div class="portrait-card">
+          <div class="portrait-frame"><img src="assets/profile.png" alt="Portrait of Samuel Agyekum" width="600" height="700"></div>
+          <div class="portrait-caption"><strong>Samuel Agyekum</strong><span>London, UK</span></div>
         </div>
-
-        <div class="contact">
-          <a class="chip" href="mailto:agyekumowuraku@gmail.com">agyekumowuraku@gmail.com</a>
-          <a class="chip" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">Download CV</a>
-          <a class="chip" href="https://github.com/agyekumboadi?tab=repositories" target="_blank" rel="noreferrer">Browse Repos</a>
-        </div>
-
-        <div class="small">
-          Focus: applied ML pipelines, data-driven systems, governance-aware analytics, and automation in regulated environments.
-        </div>
-      </aside>
-    </section>
-
-    <section class="section card" id="projects">
-      <h2>Featured Projects</h2>
-      <p class="hint2">High-impact builds across multi-sport analytics, operational systems, and workflow automation.</p>
-
-      <div class="grid">
-        <a class="proj" href="https://github.com/agyekumboadi/player-performance-ml-pipeline" target="_blank" rel="noreferrer">
-          <div>
-            <h3>Player Performance ML Pipeline (Multi-Sport)</h3>
-            <p>End-to-end predictive modelling pipeline using KPI engineering, PCA, evaluation metrics, and SHAP explainability.</p>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">PCA</span><span class="tag">SHAP</span><span class="tag">ROC AUC</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="proj" href="https://github.com/agyekumboadi/pharmacy-stock-management-system" target="_blank" rel="noreferrer">
-          <div>
-            <h3>Pharmacy Stock Management System</h3>
-            <p>Inventory and stock tracking system designed to improve accuracy, reduce stock-outs, and support daily operations.</p>
-            <div class="tags">
-              <span class="tag">Inventory</span><span class="tag">Workflow</span><span class="tag">Operations</span><span class="tag">Reporting</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="proj" href="https://github.com/agyekumboadi/care-staff-id-automation-anonymised" target="_blank" rel="noreferrer">
-          <div>
-            <h3>Care Staff ID Automation (Anonymised)</h3>
-            <p>Automated staff onboarding and ID generation workflow built for a regulated care environment-reducing admin time and improving consistency.</p>
-            <div class="tags">
-              <span class="tag">Automation</span><span class="tag">Onboarding</span><span class="tag">ID Generation</span><span class="tag">Governance</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div style="margin-top:12px;">
-        <a class="btn" href="https://github.com/agyekumboadi/data-handling-and-decision-making" target="_blank" rel="noreferrer">
-          View: Data Handling & Decision Making →
-        </a>
+        <div class="float-card one"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7"/></svg></span><span class="float-copy"><strong>Analytics & ML</strong><span>From data to insight</span></span></div>
+        <div class="float-card two"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="float-copy"><strong>Governance-aware</strong><span>Secure by design</span></span></div>
       </div>
     </section>
 
-    <section class="section card" id="more-projects">
-      <h2>More Projects</h2>
-      <p class="hint2">Web, business intelligence, and sector-focused systems supporting revenue and service delivery.</p>
+    <div class="trust-strip container" aria-label="Areas of focus">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7"/></svg>Data analytics</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/></svg>IT security & governance</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/><path d="M10 7h4a2 2 0 0 1 2 2v5M7 10v4a2 2 0 0 0 2 2h5"/></svg>Workflow automation</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg>Applied AI & ML</div>
+    </div>
 
-      <div class="grid">
-        <a class="proj" href="https://richchotel.com" target="_blank" rel="noreferrer">
-          <div>
-            <h3>Rich Comfort Hotel - Revenue & Booking Analytics</h3>
-            <p>Hospitality analytics and booking workflow improvements focused on occupancy, pricing, and revenue reconciliation.</p>
-            <div class="tags">
-              <span class="tag">Hospitality</span><span class="tag">Revenue</span><span class="tag">Occupancy</span><span class="tag">Automation</span>
-            </div>
-          </div>
-        </a>
+    <section class="section container" id="work">
+      <div class="section-head">
+        <span class="section-label">Selected work</span>
+        <h2>Projects built around real problems.</h2>
+        <p class="section-intro">A selection of analytics, machine learning, operational automation and digital projects. Each one is an opportunity to turn a practical challenge into a more useful system or clearer decision.</p>
+      </div>
+      <div class="work-toolbar">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All projects</button>
+          <button class="filter-button" type="button" data-filter="analytics" aria-pressed="false">Analytics & ML</button>
+          <button class="filter-button" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+          <button class="filter-button" type="button" data-filter="digital" aria-pressed="false">Digital systems</button>
+        </div>
+        <label class="visually-hidden" for="projectSearch">Search projects</label>
+        <input class="project-search" id="projectSearch" type="search" placeholder="Search projects…" autocomplete="off">
+      </div>
+      <div class="project-grid" id="projectGrid">
+        <article class="project-card" data-category="analytics" data-search="player performance machine learning multi sport football basketball python random forest pca shap explainability">
+          <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h17M7 15l4-5 3 3 5-7"/><circle cx="18.5" cy="6" r="1.5"/></svg></span><span class="project-type">Machine learning</span></div>
+          <h3>Player Performance ML Pipeline</h3>
+          <p>An end-to-end sports analytics project exploring player performance through KPI engineering, predictive modelling, dimensionality reduction and model explainability.</p>
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">PCA</span><span class="tag">SHAP</span></div>
+          <a class="project-link" href="https://github.com/agyekumboadi/player-performance-ml-pipeline" target="_blank" rel="noopener noreferrer">Explore repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </article>
+        <article class="project-card" data-category="digital" data-search="pharmacy stock management inventory tracking system revenue analytics operations">
+          <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14v16H5zM9 4V2h6v2M8 9h8M8 13h8M8 17h4"/></svg></span><span class="project-type">Operational system</span></div>
+          <h3>Pharmacy Stock Management System</h3>
+          <p>An inventory and stock-tracking system designed to support accurate records, improve visibility of stock levels and help reduce avoidable stock-outs.</p>
+          <div class="tag-list"><span class="tag">Python</span><span class="tag">Inventory</span><span class="tag">Operations</span><span class="tag">Reporting</span></div>
+          <a class="project-link" href="https://github.com/agyekumboadi/pharmacy-stock-management-system" target="_blank" rel="noopener noreferrer">Explore repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </article>
+        <article class="project-card" data-category="automation" data-search="care staff onboarding id generation automation google forms apps script workflow governance gdpr">
+          <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.09-.03a1.7 1.7 0 0 0-1.82.43l-.06.06h-3.4l-.04-.09a1.7 1.7 0 0 0-1.52-1.03 1.7 1.7 0 0 0-.65.13l-.08.03-2.94-1.7.03-.09a1.7 1.7 0 0 0-.43-1.82l-.06-.06v-3.4l.09-.04a1.7 1.7 0 0 0 .9-2.17l-.03-.08 1.7-2.94.09.03a1.7 1.7 0 0 0 1.82-.43l.06-.06h3.4l.04.09a1.7 1.7 0 0 0 2.17.9l.08-.03 2.94 1.7-.03.09A1.7 1.7 0 0 0 20.7 12l-.06.06v2.94Z"/></svg></span><span class="project-type">Workflow automation</span></div>
+          <h3>Care Staff ID Automation</h3>
+          <p>An anonymised staff onboarding and ID-generation workflow designed to improve consistency, reduce repetitive administration and support more controlled information handling.</p>
+          <div class="tag-list"><span class="tag">Google Forms</span><span class="tag">Apps Script</span><span class="tag">Automation</span><span class="tag">GDPR-aware</span></div>
+          <a class="project-link" href="https://github.com/agyekumboadi/care-staff-id-automation-anonymised" target="_blank" rel="noopener noreferrer">Explore repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </article>
+        <article class="project-card" data-category="analytics" data-search="data handling decision making analytics data design visualisation">
+          <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M6 16V9m4 7V5m4 11v-4m4 4V7"/></svg></span><span class="project-type">Data practice</span></div>
+          <h3>Data Handling & Decision Making</h3>
+          <p>A project focused on working with data, interpreting findings and presenting information to support reasoned decisions.</p>
+          <div class="tag-list"><span class="tag">Data analysis</span><span class="tag">Visualisation</span><span class="tag">Decision support</span></div>
+          <a class="project-link" href="https://github.com/agyekumboadi/data-handling-and-decision-making" target="_blank" rel="noopener noreferrer">Explore repository <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </article>
+        <article class="project-card" data-category="digital" data-search="rich comfort hotel hospitality website booking revenue occupancy automation">
+          <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20V9l9-6 9 6v11M7 20v-7h10v7M9 9h.01M15 9h.01"/></svg></span><span class="project-type">Web & operations</span></div>
+          <h3>Rich Comfort Hotel</h3>
+          <p>A live hospitality website and booking workflow, connected to operational thinking around occupancy, pricing and revenue reconciliation.</p>
+          <div class="tag-list"><span class="tag">WordPress</span><span class="tag">Booking workflow</span><span class="tag">Hospitality</span></div>
+          <a class="project-link" href="https://richchotel.com" target="_blank" rel="noopener noreferrer">Visit website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </article>
+        <article class="project-card" data-category="digital" data-search="nagma enfield recruitment website applicant data gdpr recruitment intelligence">
+          <div class="project-topline"><span class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1M16 5a3 3 0 0 1 0 6m2 3a5 5 0 0 1 3 5v1"/></svg></span><span class="project-type">Digital platform</span></div>
+          <h3>Nagma Enfield</h3>
+          <p>A recruitment-focused web presence, with an emphasis on clear service information and responsible handling of applicant-related information.</p>
+          <div class="tag-list"><span class="tag">WordPress</span><span class="tag">Recruitment</span><span class="tag">Information governance</span></div>
+          <a class="project-link" href="https://nagmaenfield.co.uk" target="_blank" rel="noopener noreferrer">Visit website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyState">No projects match that search. Try a different keyword or filter.</p>
+    </section>
 
-        <a class="proj" href="https://nagmaenfield.co.uk" target="_blank" rel="noreferrer">
-          <div>
-            <h3>Nagma Enfield - Recruitment Intelligence Platform</h3>
-            <p>Recruitment analytics platform supporting sourcing, placement tracking, and GDPR-aligned applicant data handling.</p>
-            <div class="tags">
-              <span class="tag">Recruitment</span><span class="tag">Dashboards</span><span class="tag">Revenue Tracking</span><span class="tag">GDPR</span>
-            </div>
+    <section class="section container" id="about">
+      <div class="section-head"><span class="section-label">A little about me</span><h2>Technical thinking, grounded in operations.</h2><p class="section-intro">I enjoy the space where data, technology and people meet — understanding a problem, designing a practical approach and making the result usable.</p></div>
+      <div class="about-layout">
+        <article class="panel">
+          <h3>How I approach problems</h3>
+          <p>My background combines information technology, data analytics and IT security. I am particularly interested in analytics that can be explained, automation that makes work more consistent, and systems that treat information responsibly.</p>
+          <p>Alongside technical projects, my operational experience has shown me why solutions need to work for the people using them. A good dashboard, model or workflow should make a real task clearer, safer or more efficient.</p>
+          <div class="principles">
+            <div class="principle"><span class="principle-number">01</span><div><strong>Understand the problem</strong><span>Start with the decision, process or user need — not just the technology.</span></div></div>
+            <div class="principle"><span class="principle-number">02</span><div><strong>Build with evidence</strong><span>Use sound data practices, clear evaluation and explainable outputs.</span></div></div>
+            <div class="principle"><span class="principle-number">03</span><div><strong>Design responsibly</strong><span>Consider privacy, governance, security and maintainability throughout.</span></div></div>
           </div>
-        </a>
-
-        <a class="proj" href="assets/CV_Samuel_Agyekum.pdf" target="_blank" rel="noreferrer">
-          <div>
-            <h3>CV - Samuel Agyekum</h3>
-            <p>Download my CV for a full overview of education, awards, and professional projects.</p>
-            <div class="tags">
-              <span class="tag">PDF</span><span class="tag">Experience</span><span class="tag">Projects</span>
-            </div>
+        </article>
+        <article class="panel">
+          <h3>Education & recognition</h3>
+          <div class="education-list">
+            <div class="education-item"><strong>MSc Data Analytics & IT Security Management</strong><span>Arden University, UK · Distinction · 2025</span></div>
+            <div class="education-item"><strong>BSc Information Technology</strong><span>Ghana Communication Technology University · Second Class Upper</span></div>
+            <div class="education-item"><strong>Academic recognition</strong><span>Arden Achiever – Postgraduate School of STEM Award; Vice Chancellor Award</span></div>
           </div>
-        </a>
+          <div style="height:1px;background:var(--line);margin:24px 0"></div>
+          <h3>Operational experience</h3>
+          <p>In care-sector operations, I have contributed to digital records, staff onboarding and ID-generation workflows, rota-related processes and secure documentation practices. This has strengthened my interest in practical automation and governance-aware technology.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section card" id="skills">
-      <h2>Skills Snapshot</h2>
-      <p class="subtitle" style="margin:0">
-        <strong>Data Analytics & IT Security</strong> - Building practical Python ML pipelines and decision-ready insights.<br/>
-        <strong>ML:</strong> Logistic Regression, Random Forest, PCA, SHAP • <strong>Analytics:</strong> Data cleaning, EDA, KPI engineering •
-        <strong>Tools:</strong> Python, Tableau, Jupyter, Git/GitHub • <strong>Governance:</strong> GDPR-aligned data handling, access controls, documentation.
-      </p>
+    <section class="section container" id="ai-workflow">
+      <div class="ai-section">
+        <div class="ai-top">
+          <div class="section-head"><span class="section-label">AI, used thoughtfully</span><h2>Augment the work. Verify the result.</h2><p class="section-intro">I see AI as a useful assistant for exploring ideas, accelerating routine tasks and making technical information easier to work with — while keeping human judgement, data quality and privacy central.</p></div>
+        </div>
+        <div class="ai-grid">
+          <article class="ai-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="4"/></svg><h3>Explore & structure</h3><p>Use generative AI to brainstorm approaches, clarify requirements, create first-draft documentation and break complex tasks into manageable steps.</p></article>
+          <article class="ai-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><h3>Build & analyse</h3><p>Combine assisted problem-solving with Python, pandas, scikit-learn and visualisation tools to develop and assess data-driven solutions.</p></article>
+          <article class="ai-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Check & govern</h3><p>Validate outputs, test code, challenge assumptions and avoid exposing personal, confidential or sensitive information to unapproved tools.</p></article>
+        </div>
+        <p class="ai-note">This section describes an AI-assisted working approach; it does not claim that every listed project contains a deployed AI feature.</p>
+      </div>
     </section>
 
-    <footer class="footer">
-      <div>© <span id="y"></span> Samuel Agyekum</div>
-    </footer>
+    <section class="section container" id="guide">
+      <div class="section-head"><span class="section-label">Interactive portfolio guide</span><h2>What would you like to know?</h2><p class="section-intro">Use the guide to find the most relevant projects and capabilities. It is a lightweight on-page navigator, not a live generative-AI chatbot.</p></div>
+      <div class="guide-layout">
+        <div class="guide-intro">
+          <h3>Ask about my work</h3>
+          <p>Choose a suggested question or type a topic — for example, machine learning, automation, governance or Python. The guide will point you to relevant information on this site.</p>
+          <div class="prompt-list">
+            <button class="prompt-chip" type="button" data-question="Show me your machine learning projects">Machine learning projects</button>
+            <button class="prompt-chip" type="button" data-question="What automation have you built?">Automation experience</button>
+            <button class="prompt-chip" type="button" data-question="How do you approach security and governance?">Security & governance</button>
+            <button class="prompt-chip" type="button" data-question="Which tools and technologies do you use?">Tools & technologies</button>
+          </div>
+        </div>
+        <div class="guide-box" aria-label="Interactive portfolio guide">
+          <div class="guide-header"><span class="guide-status" aria-hidden="true"></span><strong>Samuel's portfolio guide</strong><span>On-page assistant</span></div>
+          <div class="guide-response" id="guideResponse" aria-live="polite">Hello — I can help you navigate Samuel's portfolio. Ask me about projects, Python, machine learning, automation, security, governance or education.</div>
+          <form class="guide-form" id="guideForm">
+            <label class="visually-hidden" for="guideInput">Ask the portfolio guide</label>
+            <input class="guide-input" id="guideInput" type="text" placeholder="Ask about a skill or project…" autocomplete="off" maxlength="160">
+            <button type="submit" aria-label="Send question"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="skills">
+      <div class="section-head"><span class="section-label">Capabilities</span><h2>A toolkit for turning information into action.</h2><p class="section-intro">A practical blend of analytics, programming, visual communication, automation and information governance.</p></div>
+      <div class="skills-grid">
+        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7"/></svg><h3>Data analytics</h3><p>Data preparation, exploratory analysis, KPI development, interpretation and decision-focused reporting.</p></article>
+        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg><h3>Programming & ML</h3><p>Python, pandas, scikit-learn, classification, Random Forest, PCA, model evaluation and SHAP explainability.</p></article>
+        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3m-3 3h8"/></svg><h3>Visualisation & reporting</h3><p>Tableau, Excel and structured reporting that communicate patterns, performance and operational insight.</p></article>
+        <article class="skill-card"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg><h3>Security & governance</h3><p>GDPR-aware data handling, information governance, access-conscious processes and clear documentation.</p></article>
+      </div>
+    </section>
+
+    <section class="section container" id="contact">
+      <div class="contact-panel">
+        <div><span class="section-label">Let's connect</span><h2>Have a problem worth solving?</h2><p>I'm interested in opportunities and conversations across data analytics, IT, automation and governance-aware digital systems. Get in touch and tell me what you're working on.</p></div>
+        <div class="contact-actions"><a class="button button-primary" href="mailto:agyekumowuraku@gmail.com?subject=Professional%20Enquiry%20%E2%80%93%20Samuel%20Agyekum">Email me <span aria-hidden="true">↗</span></a><a class="button" href="https://www.linkedin.com/in/samuelbagyekum" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div>
+      </div>
+    </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container footer-inner"><span>© <span id="year"></span> Samuel Agyekum. Built with care.</span><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/agyekumboadi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:agyekumowuraku@gmail.com">Email</a><a data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request CV</a></div></div>
+  </footer>
+
+  <style>.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
   <script>
-    // Year
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // Update the year in the footer.
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Menu toggle (mobile)
-    const menuBtn = document.getElementById("menuBtn");
-    const menu = document.getElementById("menu");
-
-    function closeMenu() {
-      menu.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded", "false");
-    }
-
-    function toggleMenu() {
-      const isOpen = menu.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
-    }
-
-    menuBtn.addEventListener("click", toggleMenu);
-
-    // Close menu on link click (mobile)
-    menu.addEventListener("click", (e) => {
-      const t = e.target;
-      if (t && t.closest("a") && window.matchMedia("(max-width: 980px)").matches) {
-        closeMenu();
+    // Mobile navigation.
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open navigation menu');
+    }));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
       }
     });
 
-    // Close on Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeMenu();
-    });
-
-    // Close if clicking outside (mobile)
-    document.addEventListener("click", (e) => {
-      const clickedInsideNav = e.target.closest(".nav");
-      if (!clickedInsideNav && window.matchMedia("(max-width: 980px)").matches) closeMenu();
-    });
-
-    // Theme toggle (stores preference)
+    // Light/dark theme preference.
     const root = document.documentElement;
-    const themeToggle = document.getElementById("themeToggle");
-
-    function setTheme(theme) {
-      root.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme);
-      // match browser theme color nicely
-      const meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute("content", theme === "light" ? "#eef2ff" : "#071025");
-    }
-
-    // Init theme
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-      setTheme(saved);
-    } else {
-      // default: dark, but respect system if light
-      const prefersLight = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches;
-      setTheme(prefersLight ? "light" : "dark");
-    }
-
-    themeToggle.addEventListener("click", () => {
-      const current = root.getAttribute("data-theme") || "dark";
-      setTheme(current === "dark" ? "light" : "dark");
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('samuel-portfolio-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') root.dataset.theme = savedTheme;
+    themeToggle.addEventListener('click', () => {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      localStorage.setItem('samuel-portfolio-theme', next);
+      document.querySelector('meta[name="theme-color"]').content = next === 'light' ? '#f4f7fb' : '#08111f';
     });
+
+    // Project filters and text search.
+    const projectCards = [...document.querySelectorAll('.project-card')];
+    const filterButtons = [...document.querySelectorAll('.filter-button')];
+    const projectSearch = document.getElementById('projectSearch');
+    const emptyState = document.getElementById('emptyState');
+    let activeFilter = 'all';
+    function filterProjects() {
+      const term = projectSearch.value.trim().toLowerCase();
+      let visible = 0;
+      projectCards.forEach(card => {
+        const categoryMatch = activeFilter === 'all' || card.dataset.category === activeFilter;
+        const textMatch = !term || (card.dataset.search + ' ' + card.textContent).toLowerCase().includes(term);
+        const show = categoryMatch && textMatch;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      emptyState.style.display = visible ? 'none' : 'block';
+    }
+    filterButtons.forEach(button => button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      filterButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      filterProjects();
+    }));
+    projectSearch.addEventListener('input', filterProjects);
+
+    // CV requests: opens the visitor's email application with a fixed recipient,
+    // subject and request template. It does not expose or download the CV file.
+    const cvRecipient = 'agyekumowuraku@gmail.com';
+    const cvSubject = 'CV Request – Samuel Agyekum';
+    const cvBody = [
+      'Hello Samuel,', '',
+      'I would like to request a copy of your CV.', '',
+      'My name:',
+      'Organisation:',
+      'Role or opportunity:', '',
+      'Thank you.'
+    ].join('\n');
+    const cvMailto = `mailto:${cvRecipient}?subject=${encodeURIComponent(cvSubject)}&body=${encodeURIComponent(cvBody)}`;
+    document.querySelectorAll('[data-cv-request]').forEach(link => link.href = cvMailto);
+
+    // Lightweight, curated portfolio navigator. This is intentionally not labelled
+    // as a live AI chatbot: it uses local keyword matching and contains no API key.
+    const guideResponse = document.getElementById('guideResponse');
+    const guideInput = document.getElementById('guideInput');
+    const guideForm = document.getElementById('guideForm');
+    const guideAnswers = [
+      {keys:['machine learning','ml','shap','pca','random forest','model','football','sports','basketball'], html:'For <strong>machine learning and sports analytics</strong>, start with the <a href="#work">Player Performance ML Pipeline</a>. It covers KPI engineering, predictive modelling, PCA and SHAP-based explainability.'},
+      {keys:['automation','workflow','onboarding','staff','id generation','apps script','forms'], html:'For <strong>workflow automation</strong>, see the <a href="#work">Care Staff ID Automation</a> project. It demonstrates an anonymised onboarding and ID-generation workflow designed to reduce repetitive administration and improve consistency.'},
+      {keys:['security','governance','gdpr','privacy','information'], html:'My approach to <strong>security and information governance</strong> is to consider privacy, data handling, access and documentation throughout a project. Explore the <a href="#about">problem-solving approach</a> and <a href="#ai-workflow">AI and governance principles</a>.'},
+      {keys:['python','pandas','tableau','excel','technology','tools','skill','scikit','programming'], html:'The core toolkit includes <strong>Python, pandas, scikit-learn, Tableau and Excel</strong>, alongside workflow automation and governance-aware data practices. See the <a href="#skills">capabilities section</a> for more.'},
+      {keys:['education','msc','degree','distinction','university','award','qualification'], html:'Samuel holds an <strong>MSc in Data Analytics & IT Security Management (Distinction)</strong> from Arden University and a BSc in Information Technology (Second Class Upper). See <a href="#about">education and recognition</a>.'},
+      {keys:['pharmacy','inventory','stock'], html:'The <strong>Pharmacy Stock Management System</strong> is an operational project focused on inventory tracking, accuracy and stock visibility. Find it in <a href="#work">selected work</a>.'},
+      {keys:['contact','email','hire','opportunity','connect','cv','resume'], html:'For opportunities or a copy of my CV, use the <a href="#contact">contact section</a> or the <a href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">CV request email link</a>. The CV is supplied on request.'},
+      {keys:['website','wordpress','rich comfort','nagma','digital'], html:'For web and digital work, see the <a href="#work">Rich Comfort Hotel</a> and <a href="#work">Nagma Enfield</a> examples. They demonstrate applied website and digital-service work.'}
+    ];
+    function answerGuide(question) {
+      const q = question.toLowerCase();
+      const match = guideAnswers.find(answer => answer.keys.some(key => q.includes(key)));
+      return match ? match.html : 'I can help with <strong>machine learning, Python, automation, pharmacy inventory, security, governance, education or contact details</strong>. Try one of those topics, or browse the <a href="#work">selected projects</a> and <a href="#skills">capabilities</a> sections.';
+    }
+    function askGuide(question) {
+      const clean = question.trim();
+      if (!clean) return;
+      guideResponse.textContent = '';
+      const answer = document.createElement('div');
+      answer.innerHTML = `<strong>You asked:</strong> ${clean.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}<br><br>${answerGuide(clean)}`;
+      guideResponse.appendChild(answer);
+      guideInput.value = '';
+    }
+    guideForm.addEventListener('submit', event => {
+      event.preventDefault();
+      askGuide(guideInput.value);
+    });
+    document.querySelectorAll('[data-question]').forEach(button => button.addEventListener('click', () => askGuide(button.dataset.question)));
   </script>
 </body>
 </html>
