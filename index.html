@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#08111f">
-  <title>Samuel B. Agyekum | Data, Automation & Digital Systems</title>
-  <meta name="description" content="Samuel Agyekum - data analytics, applied machine learning, workflow automation and governance aware digital systems.">
+  <title>Samuel Agyekum | Data, Automation & Digital Systems</title>
+  <meta name="description" content="Samuel Agyekum — data analytics, applied machine learning, workflow automation and governance aware digital systems.">
   <meta name="author" content="Samuel Agyekum">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Samuel B. Agyekum | Data, Automation & Digital Systems">
+  <meta property="og:title" content="Samuel Agyekum | Data, Automation & Digital Systems">
   <meta property="og:description" content="Practical analytics, explainable machine learning and automation for better decisions and dependable operations.">
   <meta property="og:url" content="https://agyekumboadi.github.io/">
   <meta name="twitter:card" content="summary_large_image">
@@ -72,7 +72,8 @@
     .skip-link { position: fixed; z-index: 2000; top: 12px; left: 12px; padding: 10px 14px; transform: translateY(-160%); background: var(--surface-solid); border: 1px solid var(--line); border-radius: 10px; }
     .skip-link:focus { transform: translateY(0); }
     .site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(18px); }
-    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav { position: relative; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-links a.is-active:not(.button) { color: var(--accent); }
     .brand { display: inline-flex; align-items: center; gap: 12px; min-width: 210px; }
     .brand-photo { width: 44px; height: 44px; flex: 0 0 44px; display: block; object-fit: cover; object-position: center 25%; border: 1px solid var(--line); border-radius: 13px; background: var(--surface-2); box-shadow: 0 8px 24px rgba(0,0,0,.18); }
     .brand-copy { display: grid; line-height: 1.15; }
@@ -245,9 +246,35 @@
       .nav { min-height: 68px; }
       .brand { min-width: 0; }
       .menu-button { display: inline-grid; }
-      .nav-links { position: absolute; top: calc(100% + 1px); left: 0; right: 0; display: none; padding: 14px 20px 20px; border-bottom: 1px solid var(--line); background: var(--bg); box-shadow: var(--shadow); }
-      .nav-links.open { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-      .nav-links a:not(.button) { padding: 10px 9px; border-radius: 9px; background: var(--surface); }
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 9px);
+        left: auto;
+        right: 0;
+        width: min(430px, calc(100vw - 32px));
+        max-height: calc(100dvh - 105px);
+        overflow-y: auto;
+        display: none;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: color-mix(in srgb, var(--surface-solid) 94%, transparent);
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+      }
+      .nav-links.open { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      .nav-links a:not(.button) {
+        display: flex;
+        align-items: center;
+        min-height: 46px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: var(--surface);
+        color: var(--text);
+        font-size: .82rem;
+      }
+      .nav-links a.is-active:not(.button) { border-color: color-mix(in srgb, var(--accent) 48%, var(--line)); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
       .nav-links .button { grid-column: 1 / -1; }
       .hero { padding: 56px 0 42px; grid-template-columns: 1fr; }
       .hero-visual { min-height: 350px; }
@@ -265,7 +292,7 @@
       .container { width: min(100% - 26px, var(--max)); }
       .brand-copy span { display: none; }
       .nav-actions { gap: 6px; }
-      .nav-links.open { grid-template-columns: 1fr; }
+      .nav-links.open { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       h1 { font-size: clamp(2.65rem, 13vw, 3.7rem); }
       .hero-ctas .button { width: 100%; }
       .social-row { gap: 13px; }
@@ -299,12 +326,12 @@
     <nav class="nav container" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Samuel Agyekum home">
         <img class="brand-photo" src="assets/profile.png" alt="Samuel Agyekum" width="42" height="42">
-        <span class="brand-copy"><strong>Samuel B. Agyekum</strong><span>Data · Security · Automation</span></span>
+        <span class="brand-copy"><strong>Samuel Agyekum</strong><span>Data · Security · Automation</span></span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#work">Selected work</a>
         <a href="#about">About</a>
-        <a href="#ai-workflow">Ask my portfolio</a>
+        <a href="#ai-workflow">Portfolio assistant</a>
         <a href="#skills">Capabilities</a>
         <a href="#contact">Contact</a>
         <a class="button button-primary" data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request my CV <span aria-hidden="true">↗</span></a>
@@ -325,7 +352,7 @@
       <div>
         <span class="eyebrow"><span class="eyebrow-dot"></span> Data · Digital systems · Practical problem solving</span>
         <h1>I turn data into <span class="gradient-text">decisions</span> and ideas into systems.</h1>
-        <p class="hero-copy">I'm <strong>Samuel Boadi Agyekum</strong> - a data analytics and IT security professional interested in building practical analytics, explainable machine learning and workflow automation. I connect technical work with the real operational problems it is meant to solve.</p>
+        <p class="hero-copy">I'm <strong>Samuel Agyekum</strong> — a data analytics and IT security professional interested in building practical analytics, explainable machine learning and workflow automation. I connect technical work with the real operational problems it is meant to solve.</p>
         <div class="hero-ctas">
           <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
           <a class="button" data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request my CV <span aria-hidden="true">↗</span></a>
@@ -340,7 +367,7 @@
         <div class="visual-orbit" aria-hidden="true"></div>
         <div class="portrait-card">
           <div class="portrait-frame"><img src="assets/profile.png" alt="Portrait of Samuel Agyekum" width="600" height="700"></div>
-          <div class="portrait-caption"><strong>Samuel B. Agyekum</strong><span>London, UK</span></div>
+          <div class="portrait-caption"><strong>Samuel Agyekum</strong><span>London, UK</span></div>
         </div>
         <div class="float-card one"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5m0 14h17M8 15l3-4 3 2 5-7"/></svg></span><span class="float-copy"><strong>Analytics & ML</strong><span>From data to insight</span></span></div>
         <div class="float-card two"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.5 3.2 7.8 7.5 9.5 4.3-1.7 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></span><span class="float-copy"><strong>Governance-aware</strong><span>Secure by design</span></span></div>
@@ -418,14 +445,14 @@
     </section>
 
     <section class="section container" id="about">
-      <div class="section-head"><span class="section-label">A little about me</span><h2>Technical thinking, grounded in operations.</h2><p class="section-intro">I enjoy the space where data, technology and people meet - understanding a problem, designing a practical approach and making the result usable.</p></div>
+      <div class="section-head"><span class="section-label">A little about me</span><h2>Technical thinking, grounded in operations.</h2><p class="section-intro">I enjoy the space where data, technology and people meet — understanding a problem, designing a practical approach and making the result usable.</p></div>
       <div class="about-layout">
         <article class="panel">
           <h3>How I approach problems</h3>
           <p>My background combines information technology, data analytics and IT security. I am particularly interested in analytics that can be explained, automation that makes work more consistent, and systems that treat information responsibly.</p>
           <p>Alongside technical projects, my operational experience has shown me why solutions need to work for the people using them. A good dashboard, model or workflow should make a real task clearer, safer or more efficient.</p>
           <div class="principles">
-            <div class="principle"><span class="principle-number">01</span><div><strong>Understand the problem</strong><span>Start with the decision, process or user need - not just the technology.</span></div></div>
+            <div class="principle"><span class="principle-number">01</span><div><strong>Understand the problem</strong><span>Start with the decision, process or user need — not just the technology.</span></div></div>
             <div class="principle"><span class="principle-number">02</span><div><strong>Build with evidence</strong><span>Use sound data practices, clear evaluation and explainable outputs.</span></div></div>
             <div class="principle"><span class="principle-number">03</span><div><strong>Design responsibly</strong><span>Consider privacy, governance, security and maintainability throughout.</span></div></div>
           </div>
@@ -435,7 +462,7 @@
           <div class="education-list">
             <div class="education-item"><strong>MSc Data Analytics & IT Security Management</strong><span>Arden University, UK · Distinction · 2025</span></div>
             <div class="education-item"><strong>BSc Information Technology</strong><span>Ghana Communication Technology University · Second Class Upper</span></div>
-            <div class="education-item"><strong>Academic recognition</strong><span>Arden Achiever - Postgraduate School of STEM Award; Vice Chancellor Award</span></div>
+            <div class="education-item"><strong>Academic recognition</strong><span>Arden Achiever — Postgraduate School of STEM Award; Vice Chancellor Award</span></div>
           </div>
           <div style="height:1px;background:var(--line);margin:24px 0"></div>
           <h3>Operational experience</h3>
@@ -447,17 +474,17 @@
     <section class="section container" id="ai-workflow">
       <div class="pa-shell">
         <div class="pa-intro">
-          <span class="section-label">INTERACTIVE PORTFOLIO ASSISTANT</span>
-          <h2>Curious about my work? <span>Ask away.</span></h2>
-          <p>Explore my projects, technical capabilities, academic background and experience. Ask a question and let my portfolio guide you to the information that matters.</p>
+          <span class="section-label">EXPLORE MY PORTFOLIO</span>
+          <h2>Questions about my work? <span>Let's explore.</span></h2>
+          <p>Ask about my projects, technical skills, academic work, qualifications, awards and professional experience. You can type a question or choose a suggested topic to find the most relevant information.</p>
           <div class="pa-topics">
-            <span>Machine Learning</span>
-            <span>Data Analytics</span>
-            <span>Automation</span>
-            <span>IT Security</span>
-            <span>Governance</span>
+            <span>Projects and case studies</span>
+            <span>Technical skills</span>
+            <span>Education and awards</span>
+            <span>Practical experience</span>
+            <span>Career interests</span>
           </div>
-          <div class="pa-note"><span class="pa-note-dot"></span>Explore my professional profile through conversation.</div>
+          <div class="pa-note"><span class="pa-note-dot"></span>Answers are based on information in my portfolio.</div>
         </div>
 
         <div class="pa-chat" aria-label="Interactive portfolio assistant">
@@ -465,7 +492,7 @@
             <div class="pa-avatar" aria-hidden="true">SA</div>
             <div class="pa-header-copy">
               <strong>Samuel's Portfolio Assistant</strong>
-              <span id="paStatus">Portfolio knowledge mode</span>
+              <span id="paStatus">Ready to explore</span>
             </div>
             <span class="pa-online"><i></i> READY</span>
           </div>
@@ -473,27 +500,35 @@
           <div class="pa-messages" id="paMessages" aria-live="polite" aria-relevant="additions">
             <div class="pa-message assistant">
               <span class="pa-message-label">PORTFOLIO ASSISTANT</span>
-              Hello! Welcome to Samuel's portfolio. Ask me about his machine learning projects, Python skills, automation work, education, IT security interests or professional experience.
+              Hello and welcome. I can help you explore Samuel's work across data analytics, machine learning, operational systems, automation, information governance, academic case studies and professional experience. What would you like to know?
             </div>
           </div>
 
           <div class="pa-suggestions" aria-label="Suggested questions">
-            <button type="button" data-pa-prompt="Tell me about Samuel's machine learning project">Machine Learning projects</button>
-            <button type="button" data-pa-prompt="What automation projects has Samuel built?">Automation experience</button>
-            <button type="button" data-pa-prompt="What are Samuel's strongest technical skills?">Technical skills</button>
-            <button type="button" data-pa-prompt="Tell me about Samuel's education and qualifications">Education</button>
+            <button type="button" data-pa-prompt="Give me an overview of Samuel's background">Profile overview</button>
+            <button type="button" data-pa-prompt="Explain the Player Performance ML Pipeline">Sports machine learning</button>
+            <button type="button" data-pa-prompt="What other analytics case studies has Samuel completed?">Other analytics work</button>
+            <button type="button" data-pa-prompt="Tell me about the Pharmacy Stock Management System">Pharmacy system</button>
+            <button type="button" data-pa-prompt="What workflow automation has Samuel built?">Automation projects</button>
+            <button type="button" data-pa-prompt="Which tools and technologies does Samuel use?">Tools and technologies</button>
+            <button type="button" data-pa-prompt="What are Samuel's qualifications and awards?">Qualifications and awards</button>
+            <button type="button" data-pa-prompt="What professional and operational experience does Samuel have?">Professional experience</button>
+            <button type="button" data-pa-prompt="How does Samuel approach information security and governance?">Security and governance</button>
+            <button type="button" data-pa-prompt="What digital websites has Samuel worked on?">Digital projects</button>
+            <button type="button" data-pa-prompt="What roles and career areas interest Samuel?">Career interests</button>
+            <button type="button" data-pa-prompt="How can I request Samuel's CV?">Request the CV</button>
           </div>
 
           <form class="pa-form" id="paForm">
             <label class="visually-hidden" for="paInput">Ask a question about Samuel's portfolio</label>
-            <input type="text" id="paInput" placeholder="Ask about Samuel's work..." maxlength="500" autocomplete="off" required>
+            <input type="text" id="paInput" placeholder="Ask about projects, skills, experience or education..." maxlength="500" autocomplete="off" required>
             <button type="submit" id="paSend" aria-label="Send question">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
               </svg>
             </button>
           </form>
-          <div class="pa-footer">Responses are based on the information published in this portfolio. Do not enter confidential or sensitive information.</div>
+          <div class="pa-footer">This is a portfolio knowledge assistant, not a live generative AI service. Answers are limited to information Samuel has chosen to publish. Please do not enter confidential or sensitive information.</div>
         </div>
       </div>
     </section>
@@ -517,7 +552,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner"><span>© <span id="year"></span> Samuel B. Agyekum. Built with care.</span><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/agyekumboadi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:agyekumowuraku@gmail.com">Email</a><a data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request CV</a></div></div>
+    <div class="container footer-inner"><span>© <span id="year"></span> Samuel Agyekum. Built with care.</span><div class="footer-links"><a href="#top">Back to top ↑</a><a href="https://github.com/agyekumboadi" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:agyekumowuraku@gmail.com">Email</a><a data-cv-request href="mailto:agyekumowuraku@gmail.com?subject=CV%20Request%20%E2%80%93%20Samuel%20Agyekum">Request CV</a></div></div>
   </footer>
 
   <style>.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
@@ -525,25 +560,67 @@
     // Update the year in the footer.
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Mobile navigation.
+    // Responsive navigation. On phones, the menu opens as a compact two column panel.
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
+    const siteHeader = document.querySelector('.site-header');
+
+    function setNavigation(open) {
+      navLinks.classList.toggle('open', open);
       menuToggle.setAttribute('aria-expanded', String(open));
       menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+
+    menuToggle.addEventListener('click', () => {
+      setNavigation(!navLinks.classList.contains('open'));
     });
-    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Open navigation menu');
-    }));
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
-        navLinks.classList.remove('open');
-        menuToggle.setAttribute('aria-expanded', 'false');
+
+    navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.matchMedia('(max-width: 760px)').matches) setNavigation(false);
+      });
+    });
+
+    document.addEventListener('pointerdown', event => {
+      if (navLinks.classList.contains('open') && !siteHeader.contains(event.target)) {
+        setNavigation(false);
       }
     });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && navLinks.classList.contains('open')) {
+        setNavigation(false);
+        menuToggle.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 760 && navLinks.classList.contains('open')) setNavigation(false);
+    });
+
+    // Highlight the navigation item for the section currently in view.
+    const sectionLinks = [...navLinks.querySelectorAll('a[href^="#"]')];
+    const observedSections = sectionLinks
+      .map(link => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    if ('IntersectionObserver' in window) {
+      const sectionObserver = new IntersectionObserver(entries => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (!visible) return;
+        sectionLinks.forEach(link => {
+          const active = link.getAttribute('href') === `#${visible.target.id}`;
+          link.classList.toggle('is-active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }, { rootMargin: '-18% 0px -62% 0px', threshold: [0, 0.15, 0.35] });
+
+      observedSections.forEach(section => sectionObserver.observe(section));
+    }
 
     // Light/dark theme preference.
     const root = document.documentElement;
@@ -585,7 +662,7 @@
     // CV requests: opens the visitor's email application with a fixed recipient,
     // subject and request template. It does not expose or download the CV file.
     const cvRecipient = 'agyekumowuraku@gmail.com';
-    const cvSubject = 'CV Request – Samuel B. Agyekum';
+    const cvSubject = 'CV Request – Samuel Agyekum';
     const cvBody = [
       'Hello Samuel,', '',
       'I would like to request a copy of your CV.', '',
@@ -597,9 +674,10 @@
     const cvMailto = `mailto:${cvRecipient}?subject=${encodeURIComponent(cvSubject)}&body=${encodeURIComponent(cvBody)}`;
     document.querySelectorAll('[data-cv-request]').forEach(link => link.href = cvMailto);
 
-    // Portfolio assistant configuration.
-    // Keep this blank until a secure server endpoint has been created.
-    // Never place an AI provider API key in this public HTML file.
+    // Portfolio assistant.
+    // This version searches a curated portfolio knowledge base in the browser.
+    // It does not call a generative AI model or expose an API key.
+    // A secure server endpoint can be added later if live AI responses are required.
     const PORTFOLIO_AI_ENDPOINT = '';
 
     const paMessages = document.getElementById('paMessages');
@@ -608,6 +686,165 @@
     const paSend = document.getElementById('paSend');
     const paStatus = document.getElementById('paStatus');
     let paHistory = [];
+    let paLastTopics = [];
+
+    const paKnowledge = [
+      {
+        id: 'overview',
+        title: 'Profile overview',
+        keywords: ['who is samuel', 'about samuel', 'about you', 'about him', 'your background', 'profile overview', 'background', 'introduce samuel', 'tell me about samuel', 'professional profile'],
+        answer: "Samuel Agyekum is a data analytics and IT security professional with an MSc in Data Analytics and IT Security Management. His portfolio brings together applied analytics, machine learning, operational systems, workflow automation and information governance. He is interested in practical technology that helps people understand information, improve processes and make better decisions."
+      },
+      {
+        id: 'projects',
+        title: 'Project overview',
+        keywords: ['all projects', 'project list', 'show me the projects', 'what projects', 'selected work', 'portfolio projects', 'projects overview', 'projects', 'portfolio'],
+        answer: "The portfolio features the Player Performance ML Pipeline, Pharmacy Stock Management System, Care Staff ID Automation, Data Handling and Decision Making, Rich Comfort Hotel website work and Nagma Enfield digital work. Samuel has also completed academic and analytical case studies involving King Crab population data, eBay seller ratings, a Tesco dataset and information governance. Browse the Selected Work section for the published project links."
+      },
+      {
+        id: 'sports',
+        title: 'Player Performance ML Pipeline',
+        keywords: ['machine learning', 'ml pipeline', 'player performance', 'sports analytics', 'football', 'basketball', 'injury prediction', 'random forest', 'logistic regression', 'shap', 'pca', 'predictive modelling', 'predictive modeling', 'model explainability'],
+        answer: "The Player Performance ML Pipeline is an end to end sports analytics project connected to Samuel's MSc research into injury prediction and player performance in football. The work used Python, sports datasets, feature engineering, Random Forest and Logistic Regression modelling, PCA, model evaluation and SHAP explainability. The aim was to explore player performance and injury related patterns while making model outputs easier to interpret. The project repository is linked in Selected Work: https://github.com/agyekumboadi/player-performance-ml-pipeline"
+      },
+      {
+        id: 'pharmacy',
+        title: 'Pharmacy Stock Management System',
+        keywords: ['pharmacy', 'inventory', 'stock management', 'pharmacy management', 'ph anford', 'stock tracking', 'stock outs', 'stock-outs'],
+        answer: "The Pharmacy Stock Management System focuses on inventory and stock tracking. Its purpose is to support more accurate records, improve visibility of stock levels and help reduce avoidable stock outs. The project is part of Samuel's practical systems work. Repository: https://github.com/agyekumboadi/pharmacy-stock-management-system"
+      },
+      {
+        id: 'staffautomation',
+        title: 'Care Staff ID Automation',
+        keywords: ['automation', 'workflow automation', 'staff onboarding', 'care staff', 'staff id', 'id generation', 'google forms', 'apps script', 'google apps script', 'automate onboarding'],
+        answer: "The Care Staff ID Automation project is an anonymised workflow designed to improve consistency in staff onboarding and ID generation in a care environment. It demonstrates how digital forms and automation can reduce repetitive administration and support more controlled information handling. Technologies include Google Forms and Google Apps Script. Repository: https://github.com/agyekumboadi/care-staff-id-automation-anonymised"
+      },
+      {
+        id: 'datahandling',
+        title: 'Data Handling and Decision Making',
+        keywords: ['data handling', 'decision making', 'data decisions', 'data preparation', 'data quality', 'data cleaning', 'exploratory data analysis', 'eda'],
+        answer: "Data Handling and Decision Making is one of Samuel's portfolio projects. It focuses on working with data, interpreting findings and presenting information to support reasoned decisions. It complements his wider interest in data preparation, analysis and communicating useful findings. Repository: https://github.com/agyekumboadi/data-handling-and-decision-making"
+      },
+      {
+        id: 'academicanalytics',
+        title: 'Academic analytics case studies',
+        keywords: ['king crab', 'crab population', 'ebay', 'seller ratings', 'tesco', 'jamovi', 'desmos', 'other analytics', 'analytics case studies', 'academic case studies', 'tableau case study'],
+        answer: "Beyond the sports machine learning work, Samuel has completed several analytical case studies. These include a King Crab population case study using Tableau, eBay seller ratings analysis using Python, Jamovi and Desmos, and work with a Tesco dataset. These examples show a range of analytical approaches, from visualisation to statistical exploration."
+      },
+      {
+        id: 'governance',
+        title: 'Information security and governance',
+        keywords: ['security', 'it security', 'information security', 'governance', 'information governance', 'gdpr', 'privacy', 'data protection', 'risk management', 'lucidchart', 'governance framework'],
+        answer: "Samuel's academic and practical interests include information security, GDPR aware data handling, information governance, responsible access to information and secure documentation. His studies included an Information Systems Governance framework project using a care organisation as a case study, with process documentation and a flowchart. His operational experience also informed his interest in handling records responsibly."
+      },
+      {
+        id: 'tools',
+        title: 'Technical tools and technologies',
+        keywords: ['tools', 'technologies', 'technical skills', 'skills', 'software', 'python', 'pandas', 'scikit learn', 'scikit-learn', 'tableau', 'excel', 'sql', 'mysql', 'jamovi', 'desmos', 'github', 'git', 'jira', 'microsoft 365', 'microsoft teams', 'sharepoint', 'onedrive', 'power platform', 'google sheets', 'ifttt', 'ftk imager', 'winhex', 'programming'],
+        answer: "Tools and technologies reflected across Samuel's projects and learning include Python, pandas, scikit learn, Tableau, Excel, Jamovi, Desmos, Git and GitHub, basic SQL and MySQL Workbench, Google Sheets, Google Forms, Google Apps Script, IFTTT, Microsoft 365, Teams, SharePoint, OneDrive, Power Platform and JIRA. His IT security studies also involved tools such as FTK Imager and WinHex. The level of experience varies by tool, so the project descriptions show where each has been applied."
+      },
+      {
+        id: 'qualifications',
+        title: 'Education and qualifications',
+        keywords: ['education', 'qualification', 'qualifications', 'degree', 'msc', 'master', 'masters', 'bsc', 'bachelor', 'distinction', 'arden university', 'ghana communication technology university'],
+        answer: "Samuel completed an MSc in Data Analytics and IT Security Management at Arden University in September 2025, graduating with Distinction. He also holds a BSc in Information Technology from Ghana Communication Technology University, awarded with Second Class Upper Division."
+      },
+      {
+        id: 'awards',
+        title: 'Academic awards',
+        keywords: ['award', 'awards', 'recognition', 'arden achiever', 'vice chancellor', 'achievement'],
+        answer: "Samuel's academic recognition includes the Arden Achiever Postgraduate School of STEM Award and a Vice Chancellor Award. These recognitions followed his postgraduate study at Arden University."
+      },
+      {
+        id: 'experience',
+        title: 'Professional and operational experience',
+        keywords: ['experience', 'work experience', 'professional experience', 'operational experience', 'care sector', 'healthcare operations', 'support worker', 'operational data support', 'digital records', 'service delivery'],
+        answer: "Alongside his technical education and projects, Samuel has worked in care sector operations in a role combining support work and operational data support. This experience exposed him to practical service delivery needs, digital records, staff onboarding, documentation and the importance of consistent information handling. It informs his focus on technology that works for real users and operational environments."
+      },
+      {
+        id: 'digital',
+        title: 'Websites and digital projects',
+        keywords: ['website', 'websites', 'wordpress', 'rich comfort', 'richchotel', 'nagma', 'nagma enfield', 'digital platform', 'web project', 'recruitment website', 'hospitality website'],
+        answer: "Samuel's digital projects include the Rich Comfort Hotel website and the Nagma Enfield website. These are practical web projects connected to hospitality and recruitment contexts. They demonstrate involvement in website setup and digital service presentation, alongside his analytics and automation interests. Rich Comfort Hotel: https://richchotel.com. Nagma Enfield: https://nagmaenfield.co.uk."
+      },
+      {
+        id: 'career',
+        title: 'Career interests',
+        keywords: ['career', 'career interests', 'roles', 'job', 'jobs', 'opportunities', 'role', 'recruiter', 'hire', 'suitable role', 'what work', 'what jobs'],
+        answer: "Samuel is interested in opportunities where data, technology and operational improvement meet. Relevant areas include data analysis, business intelligence, IT support, information security, digital adoption, governance coordination, workflow automation and cloud administration. His portfolio is intended to demonstrate practical problem solving across these areas."
+      },
+      {
+        id: 'learning',
+        title: 'Professional learning',
+        keywords: ['courses', 'certificates', 'certifications', 'ibm', 'coursera', 'aws', 'cloud', 'cloud practitioner', 'professional development', 'learning'],
+        answer: "Samuel has pursued additional professional learning, including IBM Data Analyst learning through Coursera and AWS Cloud Practitioner Essentials study. These should be understood as learning and course activity, not a claim that he holds an AWS certification."
+      },
+      {
+        id: 'cvcontact',
+        title: 'Contact and CV requests',
+        keywords: ['contact', 'email', 'cv', 'resume', 'cv request', 'request my cv', 'request cv', 'request a cv', 'request your cv', 'request a copy', 'download cv', 'linkedin', 'get in touch'],
+        answer: "You can contact Samuel at agyekumowuraku@gmail.com or connect through LinkedIn: https://www.linkedin.com/in/samuelbagyekum. His CV is available on request. Use the Request my CV button on this website to open an email with the recipient and subject already filled in."
+      }
+    ];
+
+    function paNormalise(value) {
+      return value.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+    }
+
+    function paKeywordMatches(query, keyword) {
+      const term = paNormalise(keyword);
+      if (!term) return false;
+      if (term.length <= 3 && !term.includes(' ')) {
+        return new RegExp(`\\b${term}\\b`).test(query);
+      }
+      return query.includes(term);
+    }
+
+    function paScoreTopic(query, topic) {
+      let score = 0;
+      for (const keyword of topic.keywords) {
+        if (paKeywordMatches(query, keyword)) {
+          score += keyword.includes(' ') ? 2.5 : (keyword.length > 6 ? 1.5 : 1);
+        }
+      }
+      return score;
+    }
+
+    function paPortfolioAnswer(question) {
+      const q = paNormalise(question);
+
+      if (/^(hi|hello|hey|good morning|good afternoon|good evening)$/.test(q)) {
+        paLastTopics = ['overview'];
+        return "Hello. Thanks for visiting Samuel's portfolio. You can ask about his projects, academic background, technical tools, operational experience or career interests. What would you like to explore?";
+      }
+
+      if (/^(help|what can you do|what can i ask|suggest questions)$/.test(q) || q.includes('what can i ask about')) {
+        return "You can ask me about the full project list, the sports machine learning pipeline, pharmacy stock management, staff ID automation, other academic analytics case studies, information governance, technical tools, education, awards, work experience, digital websites, professional learning, career interests or contact details. The suggested question buttons are a good place to start. ";
+      }
+
+      if (/^(tell me more|more detail|elaborate|expand on that|what about that)$/.test(q) && paLastTopics.length) {
+        const previous = paKnowledge.filter(topic => paLastTopics.includes(topic.id));
+        return previous.map(topic => topic.answer).join('\n\n');
+      }
+
+      const ranked = paKnowledge
+        .map(topic => ({ ...topic, score: paScoreTopic(q, topic) }))
+        .filter(topic => topic.score >= 1)
+        .sort((a, b) => b.score - a.score);
+
+      if (!ranked.length) {
+        return "I could not confidently match that question to the information in this portfolio. Try asking about a particular project, Python, Tableau, SQL, machine learning, automation, information governance, academic case studies, qualifications, awards, operational experience, digital projects or career interests. You can also use the suggested questions above.";
+      }
+
+      const top = ranked.slice(0, 2);
+      paLastTopics = top.map(topic => topic.id);
+
+      if (top.length > 1 && top[1].score >= top[0].score * 0.55) {
+        return top.map(topic => `${topic.title}\n${topic.answer}`).join('\n\n');
+      }
+
+      return top[0].answer;
+    }
 
     function paAddMessage(message, role) {
       const bubble = document.createElement('div');
@@ -618,62 +855,17 @@
       return bubble;
     }
 
-    function paPortfolioAnswer(question) {
-      const q = question.toLowerCase();
-
-      if (/machine learning|random forest|shap|pca|football|sports|prediction|basketball/.test(q)) {
-        return "Samuel's Player Performance ML Pipeline explores player performance through sports data analytics and predictive modelling. It uses Python, feature engineering, Random Forest, PCA, model evaluation and SHAP explainability. Explore the Selected Work section for the project repository.";
-      }
-
-      if (/automation|workflow|onboarding|staff|id generation|apps script/.test(q)) {
-        return "Samuel's Staff ID Automation project demonstrates an anonymised staff onboarding and ID generation workflow. It was designed to improve consistency, reduce repetitive administration and support controlled information handling in a healthcare environment.";
-      }
-
-      if (/pharmacy|inventory|stock|management system/.test(q)) {
-        return "The Pharmacy Stock Management System is an operational project focused on inventory tracking, stock visibility and more consistent records. You can explore its repository from the Selected Work section.";
-      }
-
-      if (/python|pandas|programming|coding|technology|technical skills|tableau|excel/.test(q)) {
-        return "Samuel's technical toolkit includes Python, pandas, scikit learn, Tableau, Excel, Git and GitHub. His work includes data preparation, exploratory analysis, machine learning, visualisation and workflow automation. See the Capabilities section for more detail.";
-      }
-
-      if (/security|governance|gdpr|privacy|information/.test(q)) {
-        return "Samuel's background combines IT security management and data analytics. His interests include GDPR aware data handling, information governance, privacy, access conscious processes and secure documentation.";
-      }
-
-      if (/education|degree|msc|bsc|distinction|university|award|qualification/.test(q)) {
-        return "Samuel completed an MSc in Data Analytics and IT Security Management at Arden University, graduating with Distinction in 2025. He also holds a BSc in Information Technology from Ghana Communication Technology University, achieving Second Class Upper Division. His academic recognition includes the Arden Achiever Postgraduate School of STEM Award and the Vice Chancellor Award.";
-      }
-
-      if (/career|role|job|opportunity|interest|work with|recruit/.test(q)) {
-        return "Samuel is interested in opportunities across data analytics, IT, information security, business intelligence, digital operations and workflow automation. His portfolio demonstrates practical projects that connect technical analysis with operational problem solving.";
-      }
-
-      if (/contact|email|hire|connect|cv|resume/.test(q)) {
-        return "You can contact Samuel at agyekumowuraku@gmail.com or connect on LinkedIn at linkedin.com/in/samuelbagyekum. His CV is available on request through the Request my CV link.";
-      }
-
-      if (/website|wordpress|rich comfort|nagma|digital platform/.test(q)) {
-        return "Samuel has worked on digital web projects including Rich Comfort Hotel and Nagma Enfield. These demonstrate his involvement in website development and practical digital service projects.";
-      }
-
-      return "I can help you explore Samuel's machine learning projects, Python skills, automation work, pharmacy system, security and governance background, education or career interests. Try asking about one of these topics, or browse the Selected Work and Capabilities sections.";
-    }
-
     function paShowTyping() {
       const typing = document.createElement('div');
       typing.className = 'pa-message assistant';
       typing.id = 'paTyping';
       typing.setAttribute('aria-label', 'Assistant is preparing a response');
-
       const label = document.createElement('span');
       label.className = 'pa-message-label';
-      label.textContent = 'THINKING';
-
+      label.textContent = 'SEARCHING PORTFOLIO';
       const dots = document.createElement('div');
       dots.className = 'pa-typing';
       for (let i = 0; i < 3; i++) dots.appendChild(document.createElement('span'));
-
       typing.append(label, dots);
       paMessages.appendChild(typing);
       paMessages.scrollTop = paMessages.scrollHeight;
@@ -687,7 +879,7 @@
       paHistory.push({ role: 'user', content: cleanQuestion });
       paInput.value = '';
       paSend.disabled = true;
-      paStatus.textContent = PORTFOLIO_AI_ENDPOINT ? 'Connecting to the assistant' : 'Preparing a portfolio response';
+      paStatus.textContent = PORTFOLIO_AI_ENDPOINT.trim() ? 'Connecting to assistant' : 'Searching portfolio information';
       paShowTyping();
 
       try {
@@ -699,19 +891,14 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: cleanQuestion, history: paHistory.slice(-8) })
           });
-
           if (!response.ok) throw new Error('Assistant service is unavailable.');
-
           const data = await response.json();
-          if (!data.reply || typeof data.reply !== 'string') {
-            throw new Error('The assistant returned an invalid response.');
-          }
-
+          if (!data.reply || typeof data.reply !== 'string') throw new Error('The assistant returned an invalid response.');
           answer = data.reply;
           paStatus.textContent = 'Connected assistant';
         } else {
           answer = paPortfolioAnswer(cleanQuestion);
-          paStatus.textContent = 'Portfolio knowledge mode';
+          paStatus.textContent = 'Portfolio knowledge guide';
         }
 
         document.getElementById('paTyping')?.remove();
@@ -720,7 +907,7 @@
         paHistory = paHistory.slice(-8);
       } catch (error) {
         document.getElementById('paTyping')?.remove();
-        paAddMessage('Sorry, I could not process that question just now. Please try again or contact Samuel at agyekumowuraku@gmail.com.', 'assistant');
+        paAddMessage('Sorry, I could not process that question. Please try again or contact Samuel at agyekumowuraku@gmail.com.', 'assistant');
         paStatus.textContent = 'Assistant temporarily unavailable';
         console.error('Portfolio assistant error:', error);
       } finally {
@@ -738,10 +925,7 @@
       button.addEventListener('click', () => paAsk(button.dataset.paPrompt));
     });
 
-    paStatus.textContent = PORTFOLIO_AI_ENDPOINT.trim()
-      ? 'Connected assistant'
-      : 'Portfolio knowledge mode';
-
+    paStatus.textContent = PORTFOLIO_AI_ENDPOINT.trim() ? 'Connected assistant' : 'Portfolio knowledge guide';
   </script>
 </body>
 </html>
